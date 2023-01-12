@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block header %}
+  {% include 'tunnel/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  <section class="infos-form">
+    <div class="container">
+      <div class="infos-form__content">
+        <p class="infos-form__content__step">{{page.inscription_sec1_surtitle}}</p>
+        <h3 class="infos-form__content__title">{{page.inscription_sec1_title}}</h3>
+        <p class="infos-form__content__description">{{page.inscription_sec1_description}}</p>
+      </div>
+      <form class="infos-form__form" action="{{ page.link }}" method="post">
+        <input type="text" name="contact_name" id="contact_name" placeholder="Prénom" required value="{{ session.post_values.contact_name ?: get_values.contact_name }}">
+        <p class="infos-form__error">{{ errors.contact_name[0] }}</p>
+        <input type="text" name="contact_lsname" id="contact_lsname" placeholder="Nom" required value="{{ session.post_values.contact_lsname ?: get_values.contact_lsname }}">
+        <p class="infos-form__error">{{ errors.contact_lsname[0] }}</p>
+        <input type="email" name="contact_email" id="contact_email" placeholder="E-mail" required value="{{ session.post_values.contact_email ?: get_values.contact_email }}">
+        <p class="infos-form__error">{{ errors.contact_email[0] }}</p>
+        <input type="text" name="contact_society" id="contact_society" placeholder="Nom de l’établissement" required value="{{ session.post_values.contact_society ?: get_values.contact_society }}">
+        <p class="infos-form__error">{{ errors.contact_society[0] }}</p>
+        <input type="text" name="contact_address" id="contact_address" placeholder="Adresse" required value="{{ session.post_values.contact_address ?: get_values.contact_address }}">
+        <p class="infos-form__error">{{ errors.contact_address[0] }}</p>
+        <input type="text" name="contact_city" id="contact_city" placeholder="Ville" required value="{{ session.post_values.contact_city ?: get_values.contact_city }}">
+        <p class="infos-form__error">{{ errors.contact_city[0] }}</p>
+        <input type="text" name="contact_zipcode" id="contact_zipcode" placeholder="Code Postal" required value="{{ session.post_values.contact_zipcode ?: get_values.contact_zipcode }}">
+        <p class="infos-form__error">{{ errors.contact_zipcode[0] }}</p>
+        <input type="text" name="contact_iban" id="contact_iban" placeholder="IBAN" required required value="{{ session.post_values.contact_iban ?: get_values.contact_iban }}">
+        <p class="infos-form__error">{{ errors.contact_iban[0] }}</p>
+        <label class="newsletter-checkbox">
+          <input type="checkbox" name="contact_newsletter" id="contact_newsletter" value="newsletter" {{ session.post_values.contact_newsletter ? 'checked' }}>
+          {{page.inscription_sec2_newsletter}}
+        </label>
+        <label class="gtu">
+          <input type="checkbox" name="contact_gtu" id="contact_gtu" required value="gtu" {{ session.post_values.contact_gtu ? 'checked' }}>
+          Je reconnais avoir pris connaissance des <a target="_blank" href="{{ function('get_page_link', 2699) }}">Conditions Générales d’Utilisation</a> et <a target="_blank" href="{{ function('get_page_link', 2700) }}">de Vente</a> et je les accepte.
+        </label>
+        <p class="infos-form__error">{{ errors.contact_gtu[0] }}</p>
+        <p class="infos-form__error general">{{ errors.gocardless }}</p>
+        <button type="submit" name="contact_submit" class="cta-mango cta">{{page.inscription_sec2_btn}}</button>
+      </form>
+      <p class="infos-form__gocardless">Paiements gérés par GoCardless. Consultez la <a target="_blank" href="https://gocardless.com/legal/privacy/">politique de confidentialité de GoCardless.</a></p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block contact_us %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,98 @@
+.subscription-info {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  
+  @include breakpoint($screen-md) {
+    margin-top: 100px;
+  }
+}
+
+.subscription-info .container {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($screen-md) {
+    flex-direction: row;
+  }
+}
+
+.subscription-info__content {
+  @include breakpoint($screen-md) {
+    width: 450px;
+    margin-right: 50px;
+  }
+}
+
+.subscription-info__content__title {
+  margin: 20px 0 15px 0;
+  
+  @include breakpoint($screen-md) {
+    margin: 33px 0 25px 0;
+    font-size: 48px;
+  }
+}
+
+.subscription-info__content__description {
+  opacity: .7;
+  margin-bottom: 35px;
+  line-height: 24px;
+}
+
+.subscription-info__shopping-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include breakpoint($screen-md) {
+    margin-left: auto;
+  }
+}
+
+.subscription-info__shopping-cart__dropdown {
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 25px;
+  border: solid 1px #e4e4e4;
+
+  > * {
+    padding: 25px 0;
+    border-bottom: solid 1px #e4e4e4;
+
+    &:first-child {
+      padding: 10px 0 35px;
+    }
+
+    &:last-child {
+      padding: 35px 0 10px;
+      border: none;
+    }
+  }
+
+  @include breakpoint($screen-md) {
+    padding: 25px 40px;
+  }
+}
+
+.subscription-info__shopping-cart__dropdown p {
+  font-size: 16px;
+}
+
+.premium__description__item, .preinscription__description__item {
+  opacity: .7;
+}
+
+.dropdown__sous-total, .dropdown__total {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+}
+
+.dropdown__total {
+  .dropdown__total__title p {
+    opacity: .5;
+  }
+
+  .dropdown__total__price {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,88 @@
+// ---
+// Base Site Styles
+// ---
+// Keep it mobile first, yo! Read this:
+// http://www.abookapart.com/products/mobile-first
+// Actually, just buy all of those books.
+// Anyways, here's how I like to structure my content styles:
+// Border box all the things:
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// ---
+// General Selectors
+// ---
+img {
+  max-width: 100%;
+}
+
+
+// ---
+// Main Site Content
+// ---
+html {
+  background: $white;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// ---
+// Main section site
+// ---
+.site-main{
+  padding-top: 75px;
+
+  @include breakpoint(700px) {
+    padding-top: 80px;
+  }
+}
+
+.container {
+  padding: 0 25px;
+  max-width: 1260px;
+
+  @include breakpoint ($screen-tab) {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &-sm{
+    max-width: 1160px;
+    padding: 0 25px;
+    @include breakpoint ($screen-md) {
+      width: 70%;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &-xs{
+    @include breakpoint ($screen-md) {
+      margin-left: calc(100%/12 * 2);
+    }
+  }
+}
+
+// ---
+// Misc Utilities
+// ---
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+form{
+  input{
+    outline: none;
+  }
+}

@@ -1,0 +1,106 @@
+
+// ---
+// Variables
+// ---
+
+// Welcome to the variables file!
+
+// ---
+// Screen sizes
+// ---
+
+// Read this NOW:
+// http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/
+// "Start with the small screen first, then expand until it looks like shit. Time for a breakpoint!"
+// -Stephen Hay
+
+$screen-xs: 28em;
+$screen-sm: 32em;
+$screen-tab: 48em;
+$screen-md: 52em;
+$screen-tab-landscape: 64em;
+$screen-lg: 85.625em;
+$screen-xl: 106.250em;
+$screen-4k: 156.250em;
+$padding: 7.5vw;
+$padding-main: 8.3vw;
+
+
+// ---
+// Colors
+// ---
+
+
+$dark-grey-blue: #27405c;
+$mango: #ff9130;
+$pale-grey: #f1f3f6;
+$dark: #121c29;
+$red: #e63f41;
+$green: #56C65A;
+$warning: #ffca30;
+
+// In art school I was told never to make white pure white and black pure black - not sure if that holds up for the world wide web, but maybe!
+$white: #fcfcfe;
+$black: #2e2e2e;
+
+// Semantic Color Names
+// http://thesassway.com/beginner/variable-naming
+
+// These are nice utility colors
+
+
+// Then element-based names are nice too
+
+
+// The most commonly rotated color:
+
+
+
+// ---
+// Scale
+// ---
+
+// Use these values for font sizes, margins, padding, everything! It's nice to use consistent values instead of magic numbers (http://j.mp/smellycss).
+// Also, rems are awesome. Here's an article about them:
+// http://snook.ca/archives/html_and_css/font-size-with-rem
+// And a small pen I made that explains them: http://codepen.io/laras126/pen/YyWLgz
+$size-base: 1rem;
+$size-h1: $size-base*5.6;
+$size-h1-mob: $size-base*4.2;
+$size-h2: $size-base*2;
+$size-h3: $size-base*3;
+$size-h3-mob: $size-base*2.4;
+$size-h4: $size-base*1.8;
+$size-h5: $size-base*2;
+//$size-h6: $size-base;
+
+$size-body: $size-base*1.8;
+$size-cta: $size-base*1.4;
+
+
+// ---
+// Typography
+// ---
+
+// Pretty standard.
+$barlow: 'Barlow',
+sans-serif;
+
+// If you are using webfonts and are a good girl/boy, you will define some fallbacks (see the top of _typography.scss for where to use them):
+// $sans-serif-fallback: Helvetica, sans-serif;
+// $serif-fallback: Georgia, serif;
+// Here's a relatively complicated article about web fonts and performance:
+// http://artequalswork.com/posts/adventures-in-dynamic-subsetting/
+
+
+// Semantic names
+$line-height-base: 1.5;
+// $body-font-fallback:		$sans-serif-fallback;
+// $heading-font-fallback:	$serif-fallback
+
+// ----
+// Transitions
+// ----
+$easing: cubic-bezier(0.48, 0.04, 0.52, 0.96);
+$menu-animation-duration: 400ms;
+$menu-animation-timing: ease-out;

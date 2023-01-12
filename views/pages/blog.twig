@@ -1,0 +1,120 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="blog">
+  <div class="blog__container container">
+    <h1 class="blog__title">{{blog_fields.blog_sec1_title}}</h1>
+    <!-- Highlight post -->
+    {% for post in stiky_posts %}
+    <section class="blog__highlight">
+      <div class="blog__highlight__img">
+        <img src="{{Image(post.thumbnail).src}}"  
+          srcset="
+        {{Image(post.thumbnail)|fit(image_size.retina.big.width, image_size.retina.big.height)}} {{image_size.retina.width}},
+        {{Image(post.thumbnail)|fit(image_size.large.big.width, image_size.large.big.height)}} {{image_size.large.width}},
+        {{Image(post.thumbnail)|fit(image_size.medium.big.width, image_size.medium.big.height)}} {{image_size.medium.width}},
+        {{Image(post.thumbnail)|fit(image_size.mobile.big.width, image_size.mobile.big.height)}} {{image_size.mobile.width}}"
+        alt="{{Image(post.thumbnail).alt}}">
+      </div>
+      <div class="blog__highlight__content">
+        <h3 class="blog__highlight__title">{{post.title}}</h3>
+        <div class="blog__highlight__description">
+        <p class="blog__highlight__excerpt">{{post.post_excerpt}}</p>
+        <span class="blog__highlight__date">{{post.post_date|date("d F Y")}}</span>
+        </div>
+        <a href="{{ post.link }}" class="blog__highlight__link">
+          Lire la suite
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewbox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;" xml:space="preserve" width="512px" height="512px">
+            <path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z" fill="#FFFFFF"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+    {% endfor %}
+    <!-- End Highlight post -->
+
+    <div class="blog-content">
+        <!-- Categories block -->
+        <section class="categories">
+          <div class="block__title">
+            <span>{{blog_fields.blog_sec2_title}}</span>
+          </div>
+          <div class="categories__block">
+            {% for category in categories %}
+              {% if current_category.id == category.id %}
+                <a data-key="{{category.id}}" href="{{category.link}}" class="categories__block__item active">{{category.name}}</a>
+              {% else %}
+                <a data-key="{{category.id}}" href="{{category.link}}" class="categories__block__item">{{category.name}}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+        <!-- End Categories block -->
+
+        <!-- Popular block -->
+
+        {% if popular_posts %}
+        <section class="popular">
+          <div class="block__title">
+            <span>{{blog_fields.blog_sec3_title}}</span>
+          </div>
+          <div class="popular__block">
+            {% for post in popular_posts %}
+              <a href="{{post.link}}" class="popular__block__item">
+                <div class="popular__item__content">
+                  <p class="popular__item__title">{{post.title}}</p>
+                  <span class="popular__item__date">{{post.post_date|date("d F Y")}}</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewbox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;" xml:space="preserve" width="512px" height="512px">
+                  <path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z" fill="#FFFFFF"/>
+                </svg>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+        <!-- End Popular block -->
+
+      <!-- End blocks -->
+        {% for post in posts %}
+          <a href="{{post.link}}" class="blog-article__card">
+            <div class="blog-article__card__img">
+              <img src="{{Image(post.thumbnail).src}}"  
+              srcset="
+              {{Image(post.thumbnail)|fit(image_size.retina.card.width, image_size.retina.card.height)}} {{image_size.retina.width}},
+              {{Image(post.thumbnail)|fit(image_size.large.card.width, image_size.large.card.height)}} {{image_size.large.width}},
+              {{Image(post.thumbnail)|fit(image_size.medium.card.width, image_size.medium.card.height)}} {{image_size.medium.width}},
+              {{Image(post.thumbnail)|fit(image_size.mobile.card.width, image_size.mobile.card.height)}} {{image_size.mobile.width}}"
+              alt="{{Image(post.thumbnail).alt}}">
+            </div>
+            <div class="blog-article__card__content">
+              <p class="blog-article__card__title">{{post.title}}</p>
+              <p class="blog-article__card__excerpt">{{post.post_excerpt}}</p>
+              <span class="blog-article__card__date">{{post.post_date|date("d F Y")}}</span>
+            </div>
+          </a>
+        {% endfor %}
+
+
+        <!-- Fact block -->
+
+        {% if fact %}
+          {% for post in fact %}
+            <section class="fact{{ (posts|length >= 7) ? ' full-grid' : '' }}">
+              <span class="fact__title">{{post.post_fact_title}}</span>
+              <p class="fact__description">{{post.post_fact_description}}</p>
+              <a href="{{post.link}}">
+                <button type="button" class="fact__cta cta">Découvrez</button>
+              </a>
+            </section>
+          {% endfor %}
+        {% endif %}
+        <!-- End Fact block -->
+    </div>
+  </div>
+</div>
+  
+  {% include "partials/pagination.twig" %}
+  
+  
+{% endblock %}

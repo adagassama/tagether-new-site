@@ -1,0 +1,17 @@
+{
+    "name": "thibaut/tagether",
+    "description": "Tagether dependencies",
+    "type": "library",
+    "require": {
+        "gocardless/gocardless-pro": "^3.0",
+        "teknoo/sellsy-client": "^2.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "vlucas/valitron": "^1.4"
+    },
+    "authors": [
+        {
+            "name": "Thibaut Renard",
+            "email": "thibautdurenard@gmail.com"
+        }
+    ]
+}

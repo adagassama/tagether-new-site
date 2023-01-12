@@ -1,0 +1,8 @@
+.label{
+  display: inline-block;
+  padding: 5px 20px;
+
+  &-blue{
+    background-color: $dark-grey-blue;
+  }
+}

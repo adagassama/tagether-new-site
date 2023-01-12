@@ -1,0 +1,146 @@
+.infos-form {
+  margin-top: 60px;
+  margin-bottom: 25px;
+
+  @include breakpoint($screen-md) {
+    margin-top: 120px;
+    margin-bottom: 100px;
+  }
+  
+  .container {
+    @include breakpoint($screen-md) {
+      width: 45%;
+    }
+  }
+}
+
+.infos-form__content__step {
+  margin-bottom: 26px;
+  font-size: 20px;
+
+  @include breakpoint($screen-md) {
+    margin-top: 12px;
+  }
+}
+
+.infos-form__content__title {
+  margin-bottom: 8px;
+  
+  @include breakpoint($screen-md) {
+    margin-bottom: 30px;
+  }
+}
+
+.infos-form__content__description {
+  line-height: 24px;
+  opacity: .7;
+
+  @include breakpoint($screen-md) {
+    margin-bottom: 50px;
+  }
+}
+
+.infos-form__form{
+  display: flex;
+  flex-direction: column;
+}
+
+.infos-form__form input {
+  appearance: none;
+  border: 0;
+  background: $white;
+  padding: 35px 0 20px 0;
+  border-bottom: 1px solid #c0c2ce;
+
+  &::placeholder {
+    color: #c0c2ce;
+  }
+
+  @include breakpoint($screen-md) {
+    padding: 50px 0 20px 0;
+  }
+}
+
+.infos-form__form .gtu, .infos-form__form .newsletter-checkbox {
+  font-size: 16px;
+  // color: $dark-grey-blue;
+  // opacity: .5;
+  color: rgba($dark-grey-blue, .5);
+  margin-top: 22px;
+  // display: flex;
+  position: relative;
+  padding: 0 0 0 34px;
+
+  input[type=checkbox] {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #c0c2ce;
+    vertical-align: middle;
+    // margin-right: 10px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &:checked {
+      // position: relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        width: 25%;
+        height: 60%;
+        border: solid $black;
+        border-width: 0 2px 2px 0;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+  }
+
+  a {
+    color: $mango;
+  }
+
+  @include breakpoint($screen-md) {
+    margin-top: 35px;
+  }
+}
+
+.infos-form button {
+  height: 45px;
+  margin-top: 25px;
+  align-self: flex-end;
+  width: auto;
+  padding: 12px 30px;
+  
+  @include breakpoint($screen-md) {
+    margin-top: 55px;
+  }
+}
+
+.infos-form__error {
+  margin-top: 5px;
+  color: $red;
+
+  &.general {
+    margin-top: 30px;
+  }
+}
+
+.infos-form__gocardless {
+  margin-top: 25px;
+  color: #c0c2ce;
+  font-size: 16px;
+
+  a {
+    color: $mango;
+  }
+
+  @include breakpoint($screen-md) {
+    margin-top: 50px;
+  }
+}

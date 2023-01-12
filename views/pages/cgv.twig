@@ -1,0 +1,50 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <div class="legals prpd">
+    <section class="legals-hero">
+      <div class="container">
+        <h4 class="legals-hero__surtitle">Mise à jour le
+          {{page.legals_sec1_date}}</h4>
+        <h1 class="legals-hero__title">{{page.legals_sec1_title}}</h1>
+      </div>
+    </section>
+
+    <section class="legals-warning">
+      <div class="container">
+        <p class="legals-warning__content">
+          {{page.legals_sec2_description}}
+        </p>
+      </div>
+    </section>
+
+    <section class="legals-content">
+      <div class="container">
+        {% for item in page.get_field('legals_sec3_item') %}
+          <div class="legals-content__item">
+            <h3 class="legals-content__title">{{item.title}}</h3>
+            <div class="legals-content__description">
+              {{item.description}}
+            </div>
+            {% for item_inner in item.subcontent %}
+              <div class="legals-subcontent__item">
+                <h4 class="legals-subcontent__title">{{item_inner.title}}</h4>
+                <div class="legals-subcontent__description">
+                  {{item_inner.description}}
+                </div>
+                {% for item_sub_inner in item_inner.inner_subcontent %}
+                  <div class="legals-inner_subcontent__item">
+                    <h5 class="legals-inner_subcontent__title">{{item_sub_inner.title}}</h5>
+                    <div class="legals-inner_subcontent__description">
+                      {{item_sub_inner.description}}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+{% endblock %}

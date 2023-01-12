@@ -1,0 +1,30 @@
+<div class="simpleSlider__wrapper">
+  <div class="simpleSlider">
+    <div class="simpleSlider__title label label-blue">
+      <h4>{{page.front_sec6_surtitle}}</h4>
+    </div>
+      <div class="pictureSlider sizeWrapper">
+    <div class="pictureSlider__slides swiper-wrapper">
+      {% for item in page.get_field('front_sec6_slider') %}
+        <div class="pictureSlider__slide">
+          <img src="{{Image(item.logo.sizes.medium).src}}" alt="{{Image(item.logo).alt}}">
+          <p>{{item.testimony}}</p>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="captionSlider">
+      <div class="captionSlider__slides">
+        {% for item in page.get_field('front_sec6_slider') %}
+        <div class="captionSlider__slide {{ loop.index == 1 ? 'active' }}">
+          <p class="captionSlider__slide__testimony">
+            {{item.testimony}}
+          </p>
+        </div>
+      {% endfor %}
+      </div>
+      <div class="captionSlider__tiles">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+/* TEAM */
+	Project manager & front end developer: Mehdi Berra
+	Contact: mehdi.berra@tagether.fr
+	From: Paris, France
+
+	UI/UX designer: Mehdi Berra
+    Contact: mehdi.berra@tagether.fr
+	From: Paris, France
+
+	Back end developer : Adama Gasssama
+	From: Paris, France
+
+	Web designer: Mehdi Berra
+	From: Paris, France
+
+/* SITE */
+	Last update: Still in production
+	Language: French
+	Doctype:HTML5
+	IDE: Visual Studio Code and Sketch lovers

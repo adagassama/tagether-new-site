@@ -1,0 +1,525 @@
+// ---
+// Homepage
+// ---
+
+.front-hero.hero-portraits{
+  @include breakpoint($screen-md){
+    padding: 0;
+  }
+}
+
+.hero__wrapper{
+  flex-direction: column;
+
+  @include breakpoint($screen-md){
+    height: calc(100vh - 80px);
+    padding: 60px 0 120px;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+  }
+
+  @include breakpoint($screen-lg) {
+    max-height: 75vh;
+  }
+
+  // Ipad Pro
+  @media only screen 
+    and (min-device-width: 1024px) 
+    and (max-device-width: 1366px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+      max-height: 45vh !important;
+  }
+}
+
+
+// Pictures
+.hero__pictures {
+  height: 50vh;
+
+  @include breakpoint($screen-md) {
+    width: 40%;
+    height: 50vh;
+    margin: auto 0;
+    align-items: center;
+  }
+
+  @include breakpoint($screen-tab-landscape) {
+    width: 40%;
+    height: auto;
+    margin: 0;
+  }
+
+  @include breakpoint($screen-lg) {
+    height: auto;
+  }
+}
+
+.hero__pictures__item{
+  width: 45%;
+  height: 235px;
+  z-index: 5;
+
+  @include breakpoint($screen-sm) {
+    height: 285px;
+  }
+
+  @include breakpoint($screen-tab) {
+    width: 40%;
+    height: 325px;
+  }
+
+  @include breakpoint($screen-md) {
+    width: 45%;
+    max-width: 215px;
+    max-height: 275px;
+    height: inherit;
+  }
+
+  &--left{
+    margin-bottom: auto;
+
+    @include breakpoint($screen-md) {
+      margin-bottom: 100px;
+    }
+
+    &:before{
+      content: "";
+      display: inline-block;
+      background-color: $mango;
+      height: 50px;
+      width: 75px;
+      position: absolute;
+      top: -15px;
+      left: -5px;
+
+      z-index: -1;
+
+      @include breakpoint($screen-tab-landscape){
+        left: -25px;
+      }
+    }
+  }
+
+  &--right{
+    margin-top: auto;
+
+    @include breakpoint($screen-md) {
+      margin-top: 100px;
+    }
+
+    @include breakpoint($screen-tab) {
+      text-align: right;
+    }
+  }
+
+  img:first-child {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+    @include breakpoint($screen-tab) {
+      width: 235px;
+    }
+  }
+
+  &__notif{
+    bottom: 10px;
+    left: -30%;
+    object-fit: contain;
+  }
+}
+
+// Content
+.hero__content {
+  margin-top: 35px;
+
+  @include breakpoint($screen-md) {
+    margin-top: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.hero__content__button{
+  width: 200px;
+}
+
+
+/***************
+
+ BUSINESS SECTION
+
+***************/
+.front-business{
+  padding: 90px 0 40px;
+}
+
+.front-business__content__title{
+  margin: 20px 0;
+
+  @include breakpoint($screen-tab-landscape){
+    max-width: 512px;
+  }
+}
+
+.front-business__media__background{
+  display: none;
+
+  @include breakpoint($screen-tab-landscape){
+    display: block;
+  }
+}
+
+/***************
+
+USER SECTION
+
+***************/
+.front-user{
+  padding: 55px 0;
+  display: grid;
+  grid-template-rows: auto auto 60px;
+  grid-template-columns: 100%;
+  justify-content: center;
+
+  // @include breakpoint(23.438em){
+  //   grid-template-rows: 40vh auto 60px;
+  // }
+
+  // @include breakpoint($screen-xs){
+  //   grid-template-rows: 35vh auto 60px;
+  // }
+
+  // @include breakpoint($screen-md){
+  //   grid-template-rows: 250px auto 60px;
+  // }
+}
+
+// Content
+.front-user__content{
+  background-color: $mango;
+  grid-row: 1/3;
+  grid-column: 1;
+}
+
+.front-user__content__container.container{
+  text-align: center;
+  margin: 10% 0;
+  grid-column: 1;
+  grid-row: 1/2;
+  width: 100%;
+
+  @include breakpoint($screen-md) {
+    margin: 45px auto 0;
+  }
+}
+
+.front-user__content__title{
+  margin: 20px auto;
+  max-width: 520px;
+  text-align: center;
+  color: $white;
+
+   @include breakpoint(1024px) {
+     max-width: 550px;
+   }
+}
+
+
+// Media
+.front-user__media{
+  grid-row: 2/4;
+  grid-column: 1;
+
+  @include breakpoint(1024px){
+    padding-top: 45px;
+  }
+}
+
+.front-user__media__wrapper{
+
+  @include breakpoint($screen-md){
+    display: grid;
+    grid-template-columns: 25% 33% auto;
+  }
+}
+
+.front-user__media__notifs{
+  @include breakpoint($screen-md) {
+    grid-row: 1;
+    grid-column: 1/3;
+    z-index: 5;
+    display: grid;
+    grid-template-rows: auto 120px 35px 120px auto;
+    grid-template-columns: 30px auto;
+  }
+}
+
+.front-user__media__img{
+  @include breakpoint($screen-md) {
+    grid-row: 1;
+    grid-column: 2/4;
+  }
+
+  img{
+    width: 100%;
+  }
+}
+.media__notifs__item {
+  font-size: $size-cta;
+  background-color: $white;
+  padding: 5% 8% 5% 40px;
+  position: relative;
+  margin-left: 30px;
+
+  @include breakpoint($screen-md) {
+    max-width: 290px;
+    max-height: 120px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  img{
+    max-width: 65px;
+    min-width: 60px;
+    object-fit: cover;
+    position: absolute;
+    top: 5px;
+    left: -35px;
+  }
+
+  p{
+    font-size: $size-cta;
+  }
+
+  &:first-child{
+    margin-bottom: 35px;
+    @include breakpoint($screen-md) {
+      grid-row: 2/3;
+      grid-column: 1/3;
+      margin-bottom: 0;
+    }
+  }
+
+  &:last-child{
+    margin-bottom: 60px;
+    @include breakpoint($screen-md) {
+      grid-row: 4/5;
+      grid-column: 2/4;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/****************
+
+BENEFITS SECTION 
+
+*****************/
+.front-benefits{
+  padding: 50px 0;
+}
+.front-benefits__content{
+  margin-bottom: 75px;
+}
+
+.front-benefits__content__title{
+  max-width: 545px;
+  margin-top: 35px;
+}
+/***************
+
+PHONES SECTION
+
+****************/
+.front-phones{
+  position: relative;
+
+  @include breakpoint ($screen-md){
+    display: grid;
+    grid-template-rows: 60px auto;
+  }
+
+  span, p{
+    color: $white;
+  }
+}
+
+.front-phones__background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  @include breakpoint ($screen-md){
+    position: inherit;
+    grid-row: 2/3;
+    grid-column: 1;
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Phones content
+.front-phones__container{
+  padding: 0 25px;
+
+  @include breakpoint ($screen-md){
+    grid-row: 1/3;
+    grid-column: 1;
+  }
+}
+
+.front-phones__wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint($screen-md){
+    display: grid;
+    grid-template-rows: 60px auto 30px;
+    grid-template-columns: 33% 2% auto 33%;
+    align-items: start;
+  }
+}
+
+
+// Text content
+.front-phones__texts{
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 30px;
+
+  @include breakpoint ($screen-tab){
+    padding: 50px 15px 30px 15px;
+  }
+
+  @include breakpoint ($screen-md){
+    grid-row: 2/3;
+    grid-column: 4;
+    max-width: 340px;
+    align-self: center;
+    padding: 0 0 0 15px;
+  }
+}
+
+.front-phones__texts__title{
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+// Screenshots
+
+.front-phones__screens__main-img{
+  align-self: stretch;
+  text-align: center;
+
+  img {
+    min-width: 260px;
+
+    @include breakpoint($screen-md) {
+      width: 70%;
+    }
+  }
+
+  @include breakpoint($screen-md) {
+    grid-row: 1/3;
+    grid-column: 2/4;
+    z-index: 5;
+  }
+}
+.front-phones__screens__others{
+  display: none;
+
+  @include breakpoint($screen-md){
+    display: flex;
+    flex-direction: row;
+    grid-row: 2;
+    grid-column: 1/3;
+    padding-top: 15px;
+  }
+
+  &__img{
+    width: 50%;
+
+    &:first-child {
+      padding-right: 15px;
+    }
+  }
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/****************
+
+Testimonies section
+
+*******************/
+.front-testimonies{
+  background: $dark;
+}
+
+/*************
+
+Blog section 
+
+****************/
+.front-blog{
+  padding: 70px 0 0;
+}
+
+.front-blog__content{
+  text-align: center;
+
+  h3{
+    text-align: center;
+    margin: 20px auto;
+
+    @include breakpoint($screen-tab-landscape){
+      max-width: 515px;
+    }
+  }
+}
+
+.front-blog__wrapper{
+  @include breakpoint ($screen-md) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.front-blog__card{
+  display: none;
+
+  @include breakpoint ($screen-md){
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+
+  &:first-child{
+    display: inline-block;
+
+    @include breakpoint ($screen-md) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

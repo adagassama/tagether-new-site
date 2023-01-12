@@ -1,0 +1,245 @@
+.site-footer{
+  background-color: $dark;
+  color: $white;
+}
+
+.site-footer__wrapper{
+  @include breakpoint ($screen-md) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+
+// Site footer infos
+.site-footer__infos{
+  padding: 55px 0;
+
+  @include breakpoint ($screen-md) {
+    padding-right: 90px;
+    width: 35%;
+  }
+}
+
+.site-footer__infos .company-name{
+  @include font($barlow, $size-h4, 500, $white, none, left);
+}
+
+.infos__description p{
+  margin-top: 12px;
+  @include font ($barlow, 1.6rem, 400, $white, none, left);
+}
+
+.infos__contact {
+  margin-top: 90px;
+}
+
+.infos__contact p{
+  margin-bottom: 10px;
+  color: $white;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  span, a {
+    font-weight: normal;
+    font-size: 1.6rem;
+    color: $white;
+
+    @include breakpoint ($screen-lg) {
+      margin-left: 15px;
+    }
+  }
+
+  @include breakpoint ($screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  @include breakpoint ($screen-lg) {
+    flex-direction: row;
+  }
+}
+
+.infos__contact .infos__unsubscribe {
+  display: block;
+  margin-top: 50px;
+  color: $white;
+}
+
+.infos__email {
+  a {
+    text-decoration: underline;
+  }
+}
+
+// Site footer content
+// Newsletter
+.site-footer__content{
+  @include breakpoint ($screen-md) {
+    padding: 55px 0;
+    width: 65%;
+  }
+}
+
+.newsletter__title p{
+  margin-bottom: 30px;
+  @include font ($barlow, 2rem, 400, $white, none, left);
+
+  @include breakpoint ($screen-md) {
+    max-width: 500px;
+  }
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint ($screen-md) {
+    border-bottom: 1px solid $mango;
+    flex-direction: row;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $white;
+    opacity: .7;
+    /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $white;
+    opacity: .7;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $white;
+    opacity: .7;
+  }
+}
+.newsletter input{
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.newsletter .newsletter__field {
+  padding: 15px 0;
+  border-bottom: solid $mango 1px;
+
+  @include breakpoint ($screen-md) {
+    border-bottom: none;
+    font-size: 2.8rem;
+    font-weight: 300;
+    width: 66%;
+  }
+}
+
+.newsletter__submit {
+  margin-top: 15px;
+  @include font($barlow, $size-cta, 500, $white, none, left);
+
+  @include breakpoint ($screen-md) {
+    text-align: right;
+    width: 33%;
+  }
+
+  input{
+    padding: 20px 0;
+  }
+}
+.newsletter__submit svg {
+  width: 20px;
+  height: 10px;
+}
+
+.newsletter__message {
+  color: $white;
+  margin-top: 20px;
+}
+
+// Navigation
+.footer__wrapper{
+  margin-top: 90px;
+}
+
+.footer__wrapper .footer__nav{
+
+  .nav__wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include breakpoint ($screen-md) {
+      align-items: start;
+    }
+  }
+
+  .nav__item{
+    width: 50%;
+
+    @include breakpoint ($screen-md) {
+      width: 30%;
+    }
+
+    &:first-child{
+      margin: 0;
+    }
+
+    &:last-child{
+      background: none;
+      border: none;
+      width: 50%;
+
+      @include breakpoint ($screen-md) {
+        width: 27%;
+        margin: 0;
+        margin-left: auto;
+        display: inline-block;
+        height: inherit;
+      }
+
+      .item__link{
+        @include font($barlow, 1.6rem, 500, $white, none, left);
+      }
+    }
+  }
+
+  .item__link{
+    cursor: default;
+    padding-bottom: 30px;
+    @include font($barlow, 1.6rem, 500, $white, none, left);
+
+    @include breakpoint ($screen-md) {
+      padding: 0 0 25px;
+      @include font($barlow, 1.6rem, 500, $white, none, left);
+    }
+  }
+}
+
+// Sub navigation
+.item__drop{}
+
+.drop__item{
+  padding: 5px 0;
+}
+.drop__item a{
+  @include font($barlow, 1.6rem, 400, $white, none, left);
+}
+
+
+// Footer copyrights
+.site-footer__copyrights{
+  padding: 65px 0;
+}
+
+.footer__copyrights{
+  opacity: 0.5;
+  @include font($barlow, 1.4rem, 400, #f3f3f3, none, center);
+
+  @include breakpoint ($screen-md) {
+    text-align: left;
+  }
+}

@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block header %}
+  {% include 'tunnel/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  <section class="thank-you">
+    <div class="container">
+      <div class="thank-you__label label label-blue">
+        <h4>{{page.thankyou_sec1_surtitle}}</h4>
+      </div>
+      <h1 class="thank-you__title">{{ result.title }}</h1>
+      <p class="thank-you__description">{{ result.message }}</p>
+      <a href="{{site.link}}"><button class="thank-you__cta cta cta-mango">Terminer</button></a>
+    </div>
+  </section>
+{% endblock %}
+
+{% block contact_us %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

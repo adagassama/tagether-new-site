@@ -1,0 +1,40 @@
+// BUTTON CTA
+.cta {
+  @include font($barlow, $size-cta, 500, $white, none, center);
+  border: none;
+  height: 55px;
+  width: 155px;
+  transition: all ease-in 0.2s;
+
+  &:hover {
+    transition: all ease-in 0.2s;
+  }
+}
+
+.cta-mango {
+  background: $mango;
+
+  &:hover {
+    background: transparent;
+    border: solid 1px $mango;
+    color: $dark-grey-blue;
+
+    svg path{
+      fill: $dark-grey-blue;
+    }
+  }
+}
+
+.cta-blue{
+  background: $dark-grey-blue;
+  
+  &:hover{
+    background: transparent;
+    border: solid 1px $dark-grey-blue;
+    color: $dark-grey-blue;
+
+    svg path {
+      fill: $dark-grey-blue;
+    }
+  }
+}

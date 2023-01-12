@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="faq">
+  <section class="faq-hero hero-minor">
+    <div class="container">
+      <h4 class="faq-hero__surtitle">{{page.faq_sec1_surtitle}}</h4>
+      <h1 class="faq-hero__title">{{page.faq_sec1_title}}</h1>
+    </div>
+  </section>
+
+  <section class="faq-content">
+    <div class="container">
+      <div class="faq-content__group">
+        <span class="faq-content__title">{{page.faq_sec2_title}}</span>
+        {% for item in page.get_field('faq_sec2_faq') %}
+          <div class="faq-content__question dropdown-container collapsed">
+            <p class="dropdown__title">{{item.question}}
+              <span class="chevron"></span></p>
+            <div class="dropdown-list">
+              <div class="faq-content__description">{{item.answer}}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="faq-content__group">
+        <span class="faq-content__title">{{page.faq_sec3_title}}</span>
+        {% for item in page.get_field('faq_sec3_faq') %}
+          <div class="faq-content__question dropdown-container collapsed">
+            <p class="dropdown__title">{{item.question}}
+              <span class="chevron"></span></p>
+            <div class="dropdown-list">
+              <div class="faq-content__description">{{item.answer}}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="faq-content__group">
+        <span class="faq-content__title">{{page.faq_sec4_title}}</span>
+        {% for item in page.get_field('faq_sec4_faq') %}
+          <div class="faq-content__question dropdown-container collapsed">
+            <p class="dropdown__title">{{item.question}}
+              <span class="chevron"></span></p>
+            <div class="dropdown-list">
+              <div class="faq-content__description">{{item.answer}}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

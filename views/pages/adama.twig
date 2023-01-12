@@ -1,0 +1,400 @@
+{% extends "base.twig" %}
+{% block content %}
+	<!-- Front hero section -->
+	<section class="front-hero hero-portraits">
+		<div class="hero__container hero-portraits__container container">
+			<div class="hero__wrapper hero-portraits__wrapper">
+				<div class="hero__picture">
+					<div class="hero__picture__img">
+						<img src="{{Image(page.adama_sec1_img).src}}" alt="{{Image(page.adama_sec1_img).alt}}">
+					</div>
+				</div>
+				<div class="hero__content hero-portraits__content">
+					<h1 class="hero__content__title hero-portraits__content__title">{{page.adama_sec1_title}}</h1>
+					<div class="hero__content__description hero-portraits__content__description">
+						{{page.adama_sec1_description}}</div>
+					
+					<div class="hero__content__stores">
+						<button class="btn-hero">
+							<a href="{{ page.adama_sec1_cta_url }}">
+								{{ page.adama_sec1_cta }}
+							</a>
+						</button>
+
+						<button class="btn-hero">
+							<a href="{{ page.adama_sec1_cta_url_demo }}">
+								{{ page.adama_sec1_cta_demo }}
+							</a>
+						</button>
+
+						<a href="{{ page.front_sec1_appstore_url_appstore }}">
+							<img src="{{ Image(page.front_sec1_appstore_logo_appstore).src }} " alt="">
+						</a>
+						<a href="{{ page.front_sec1_playstore_url_playstore }}">
+							<img src="{{ Image(page.front_sec1_playstore_logo_playstore).src }} " alt="">
+						</a>
+					</div>
+                    <div class="press_slider">
+							{% for item in page.get_field('adama_sec1_slider') %}
+								<div class="press__slide">
+									
+										<div class="img">
+								            <img src="{{Image(item.logo.sizes.medium).src}}" alt="{{Image(item.logo).alt}}">
+							            </div>
+
+									
+									
+								</div>
+							{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End front hero section -->
+
+	<!-- Features section 2 -->
+	<section class="front-business">
+		<div class="front-business__container container">
+			<div class="feat feat-1-1">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec2_feat1_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec2_feat1_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec2_feat1_desc}}
+				</p>
+                <button class="btn-feat">
+					<a href="{{ page.adama_sec2_feat1_lien_cta_bouton_decouvrir }}">
+								{{ page.adama_sec2_feat1_bouton_decouvrir_cta }}
+					</a>
+				</button>
+			</div>
+			<div class="feat feat-2">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec2_feat2_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec2_feat3_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec2_feat3_desc}}
+				</p>
+                <button class="btn-feat">
+					<a href="{{ page.adama_sec2_feat3_lien_cta_bouton_decouvrir }}">
+								{{ page.adama_sec2_feat3_bouton_decouvrir_cta }}
+					</a>
+				</button>
+			</div>
+			<div class="feat feat-3">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec2_feat3_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec2_feat1_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec2_feat1_desc}}
+				</p>
+                <button class="btn-feat">
+					<a href="{{ page.adama_sec2_feat1_lien_cta_bouton_decouvrir }}">
+								{{ page.adama_sec2_feat1_bouton_decouvrir_cta }}
+					</a>
+				</button>
+			</div>
+			<div class="feat feat-4">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec2_feat4_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec2_feat4_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec2_feat4_desc}}
+				</p>
+                <button class="btn-feat">
+					<a href="{{ page.adama_sec2_feat4_lien_cta_bouton_decouvrir }}">
+								{{ page.adama_sec2_feat4_bouton_decouvrir_cta }}
+					</a>
+				</button>
+			</div>
+		</div>
+	</section>
+	<!-- End Features section 2 -->
+
+
+	<!-- Features section 3 -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="">
+				<h3>{{page.adama_sec3_titre}}</h3>
+			</div>
+			<div class="feat-img">
+					<img src="{{ Image(page.adama_sec3_image).src }} " alt="">
+			</div>
+		</div>
+		<div class="front-business__container container">
+			<div class="feat feat-1">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec3_feat1_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec3_feat1_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec3_feat1_desc}}
+				</p>
+			</div>
+			<div class="feat feat-1">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec3_feat2_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec3_feat2_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec3_feat2_desc}}
+				</p>
+			</div>
+			<div class="feat feat-1">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec3_feat3_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec3_feat3_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec3_feat3_desc}}
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- End Features section 3 -->
+
+
+	<!-- Section 4 Procédure -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="">
+				<h3>{{page.adama_sec4_titre}}</h3>
+			</div>
+		</div>
+		<div class="front-business__container container">
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.adama_sec4_feat1_grand_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec4_feat1_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec4_feat1_desc}}
+				</p>
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.adama_sec4_feat2_grand_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec4_feat2_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec4_feat2_desc}}
+				</p>
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.adama_sec4_feat3_grand_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec4_feat3_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec4_feat3_desc}}
+				</p>
+			</div>
+		</div>
+		<div class="btn-inscription">
+			<button class="btn-feat">
+					<a href="{{ page.adama_sec4_lien_cta_bouton_inscription }}">
+								{{ page.adama_sec4_bouton_inscription_cta }}
+					</a>
+				</button>
+		</div>
+	</section>
+	<!-- End Section 4 Procédure -->
+
+
+	<!-- Section 5 Photographie -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="">
+				<h3>{{page.adama_sec5_grand_titre}}</h3>
+			</div>
+		</div>
+		<div class="front-business__container container">
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.adama_sec5_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec5_description }}
+				</p>
+			</div>
+			<div class="feat-img-poste">
+					<img src="{{ Image(page.adama_sec5_image).src }} " alt="">
+			</div>
+		</div>
+
+		<div class="front-business__container container">
+			<div class="feat-img-poste">
+					<img src="{{ Image(page.adama_sec5_image_2).src }} " alt="">
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.adama_sec5_titre_2}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec5_description_2 }}
+				</p>
+			</div>
+		</div>
+
+		<div class="front-business__container container">
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.adama_sec5_titre_3}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec5_description_3 }}
+				</p>
+			</div>
+			<div class="feat-img-poste">
+					<img src="{{ Image(page.adama_sec5_image_3).src }} " alt="">
+			</div>
+		</div>
+	</section>
+	<!-- End Section 5 Photographie -->
+
+	<!-- Section 6 Presse -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="">
+				<h3>{{page.adama_sec6_grand_titre}}</h3>
+			</div>
+		</div>
+			<div class="">
+				<h4>{{page.adama_sec6_description}}</h4>
+			</div>
+		<div class="front-business__container container">
+			<div class="feat">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec6_feat1_img).src }} " alt="">
+				</div>
+				<p class="">
+					{{page.adama_sec6_feat1_titre}}
+				</p>
+                <p class="feat__content__title">
+					{{page.adama_sec6_feat1_desc}}
+				</p>
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec6_feat2_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec6_feat2_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec6_feat2_desc}}
+				</p>
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<img src="{{ Image(page.adama_sec6_feat3_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.adama_sec6_feat3_titre}}
+				</p>
+                <p class="">
+					{{page.adama_sec6_feat3_desc}}
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- End Section 6 Presse -->
+
+
+{# <!-- Blog section -->
+<section class="front-blog">
+	<div class="front-blog__container container-sm">
+		<div class="front-blog__content">
+			<div class="front-blog__content__label label label-blue">
+				<h4>{{page.front_sec7_surtitle}}</h4>
+			</div>
+			<h3 class="front-blog__content__title">{{page.front_sec7_title}}</h3>
+		</div>
+		<div class="front-blog__wrapper">
+			{% for post in posts %}
+				<a href="{{ post.link }}" class="front-blog__card blog-card">
+					<img src="{{Image(post.thumbnail).src}}" srcset="
+						                        {{Image(post.thumbnail)|fit(image_size.retina.card.width, image_size.retina.card.height)}} {{image_size.retina.width}},
+						                        {{Image(post.thumbnail)|fit(image_size.large.card.width, image_size.large.card.height)}} {{image_size.large.width}},
+						                        {{Image(post.thumbnail)|fit(image_size.medium.card.width, image_size.medium.card.height)}} {{image_size.medium.width}},
+						                        {{Image(post.thumbnail)|fit(image_size.mobile.card.width, image_size.mobile.card.height)}} {{image_size.mobile.width}}" alt="{{Image(post.thumbnail).alt}}" class="front-blog__card__img blog-card__img">
+					<h5 class="front-blog__card__title blog-card__title">{{ post.title }}</h5>
+					<p class="front-blog__card__excerpt blog-card__excerpt">{{post.post_excerpt}}</p>
+					<span class="front-blog__card__date blog-card__date">{{post.post_date|date("d F Y")}}</span>
+				</a>
+			{% endfor %}
+		</div>
+		<div class="front-blog__link blog__see-more">
+			<a href="{{site.link}}/blog">
+				En voir plus
+				<svg height="512px" id="Capa_1" style="enable-background:new 0 0 31.49 31.49;" version="1.1" viewbox="0 0 31.49 31.49" width="512px" x="0px" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+					<path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z" fill="#FFFFFF"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>
+<!-- End Blog section --> #}
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+$('.press_slider').slick({
+slidesToShow: 4,
+slidesToScroll: 1,
+arrows: false,
+dots: false,
+autoplay: true,
+autoplaySpeed: 2000,
+responsive: [
+{
+breakpoint: 1024,
+settings: {
+slidesToShow: 4,
+slidesToScroll: 4,
+infinite: true
+}
+}, {
+breakpoint: 600,
+settings: {
+slidesToShow: 2,
+slidesToScroll: 2
+}
+}, {
+breakpoint: 480,
+settings: {
+slidesToShow: 1,
+slidesToScroll: 1
+}
+}
+// You can unslick at a given breakpoint now by adding: settings: "unslick" instead of a settings object
+]
+});
+});
+</script>{% endblock %}

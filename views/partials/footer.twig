@@ -1,0 +1,39 @@
+<div class="site-footer__container container-sm">
+    <div class="site-footer__wrapper">
+        <div class="site-footer__infos">
+            <span class="company-name">{{site.name}}</span>
+            <div class="infos__description">{{options.footer_description}}</div>
+            <div class="infos__contact">
+                <p class="infos__tel">{{options.footer_tel_title}}
+                    <span>{{options.footer_tel_number}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="site-footer__content">
+            <div class="footer__wrapper">
+                <nav class="footer__nav" role="navigation">
+                    <ul class="nav__wrapper">
+                        {% for item in footer.get_items %}
+                            <li class="nav__item {{item.classes | join(' ')}}">
+                                <span class="item__link {% if item.get_children %} drop__trigger {% endif %}">{{item.title}}
+                                </span>
+                                {% if item.get_children %}
+                                    <ul class="item__drop">
+                                        {% for child in item.get_children %}
+                                            <li class="drop__item">
+                                                <a class="drop__link" target="{{ child.is_external ? '_blank' : '_self' }}" href="{{child.get_link}}">{{child.title}}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="site-footer__copyrights">
+        <p class="footer__copyrights">{{options.footer_copyrights}}</p>
+    </div>
+</div>

@@ -1,0 +1,359 @@
+.page-template-template-prices {
+  overflow-x: visible;
+}
+
+/*********** Prices page *********/
+.prices-hero{
+  @include breakpoint($screen-md){
+    margin-bottom: 170px;
+  }
+}
+.prices-hero__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint($screen-md){
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.prices-hero__content{
+  @include breakpoint($screen-md) {
+    width: 60%;
+    display: inline-block;
+    padding-top: 40px;
+    padding-right: 7%;
+  }
+}
+
+.prices-hero__content__title{
+  padding: 25px 0;
+}
+
+.prices-hero__content__description{
+  font-size: 2rem;
+  opacity: 0.7;
+  line-height: 32px;
+
+  @include breakpoint($screen-md) {
+  }
+}
+
+.prices-hero__picture{
+  height: 315px;
+  position: relative;
+  bottom: -50px;
+
+  @include breakpoint($screen-md) {
+    width: 350px;
+    bottom: -25px;
+    align-self: flex-end;
+  }
+
+  img{
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/***********
+
+PRICES 
+
+*************/
+.prices{
+  background-color: $pale-grey;
+  padding-top: 100px;
+}
+
+.prices__bundles__wrapper{
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint ($screen-md){
+    flex-direction: row;
+    margin-top: -150px;
+  }
+}
+
+.prices__bundle{
+  background-color: $white;
+  padding: 55px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+  box-shadow: -6px -2px 14px 0 rgba(0, 0, 0, 0.03);
+
+  @include breakpoint ($screen-md) {
+    width: 40%;
+    margin-right: 45px;
+  }
+}
+
+.prices__bundle__surtitle{
+  font-size: 2rem;
+}
+.prices__bundle__title{
+  font-size: 3.6rem;
+}
+.prices__bundle__title2{
+    font-size: 3.6rem;
+}
+.prices__bundle__description{
+  font-size: 16px;
+  opacity: 0.7;
+  margin: 15px 0 35px;
+
+  @include breakpoint ($screen-md) {
+    min-height: 150px;
+  }
+}
+
+.prices__bundle__link{
+  margin-left: -60px;
+}
+
+.prices__bundle__button{
+  width: 280px;
+  height: 75px;
+  svg{
+    width: 20px;
+    height: 10px;
+  }
+}
+
+.prices__bundle__legend{
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  color: rgba(39, 64, 92,
+  0.5);
+  font-size: 1.4rem;
+}
+
+// ****************
+// Features section
+
+.feature--active{
+  opacity: 1 !important;
+}
+.separator--active{
+  transform: translateX(100%);
+}
+.mockup--active{
+  opacity: 1 !important;
+}
+
+.prices__features{
+  margin-top: 65px
+}
+.prices__features__wrapper{
+
+  @include breakpoint ($screen-md){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+// Mockup examples
+.prices__features__mockup{
+  display: none;
+
+  @include breakpoint($screen-md){
+    display: grid;
+    width: 40%;
+  }
+
+  img{
+    opacity: 0;
+
+    @include breakpoint($screen-md) {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+}
+
+// Content
+.prices__features__content{
+  @include breakpoint($screen-md) {
+    width: 50%;
+    margin-top: 55px;
+  }
+}
+.features__content__description{
+  opacity: 0.7;
+  padding: 15px 0 35px;
+}
+
+.features__options__wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 30px;
+  color: $dark-grey-blue;
+
+  &:before{
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $dark-grey-blue;
+    opacity: 0.5;
+  }
+}
+
+.features__options__separator{
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  display: block;
+  width: 50%;
+  height: 1px;
+  background-color: $dark-grey-blue;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+.features__options__title{
+  opacity: 0.5;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.features__options__list{
+  margin-top: 35px;
+  list-style-type: square;
+  padding-left: 19px;
+}
+
+.features__options__item{
+  opacity: 0.5;
+  margin: 5px 0;
+  color: $dark-grey-blue;
+}
+
+.features__content__img{
+  position: relative;
+  width: 275px;
+  height: 275px;
+  margin-top: 75px;
+
+  img{
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.features__notif{
+  position: absolute;
+  width: 50%;
+  bottom: 35%;
+  left: -15%;
+  z-index: 8;
+}
+
+/******************
+
+Activities section + Scroll slider
+
+********************/
+
+.prices__activities{
+  margin-top: -100px;
+  padding-top: 250px;
+  background-color: $white;
+}
+
+.activities__content__title{
+  margin-top: 25px;
+}
+
+// Scroll slider
+.slideScroll__captions{
+  margin-top: 25px;
+}
+.slideScroll__caption{
+  font-size: 1.6rem;
+  color: rgba(39, 64, 92, 0.7);
+
+  ul{
+    list-style: square;
+
+    li{
+      margin-left: 19px;
+    }
+  }
+}
+.slideScroll__title{
+  display: block;
+  font-size: 2rem;
+  color: $dark-grey-blue;
+  margin-bottom: 15px;
+}
+
+/***************
+
+FAQ
+
+****************/
+.prices__faq__title{
+  margin: 25px 0;
+  
+  @include breakpoint($screen-md){
+    max-width: 515px;
+  }
+}
+
+.prices__faq__wrapper{
+  margin: 50px 0;
+}
+
+.prices__faq__question {
+  padding: 20px 0;
+  position: relative;
+
+  @include breakpoint ($screen-md){
+    max-width: 690px;
+  }
+
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #d8d8d8;
+  }
+
+  &:last-child{
+    &:after{
+      display: none;
+    }
+  }
+}
+
+.prices__faq__wrapper .dropdown-list{
+  margin-top: 15px;
+
+  ul{
+    list-style: square;
+
+    li{
+      margin-left: 19px;
+    }
+  }
+}

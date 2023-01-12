@@ -1,0 +1,50 @@
+// HERO SECTION used in Front and About pages
+
+.hero-portraits {
+  padding: 40px 0 90px;
+
+  @include breakpoint($screen-tab-landscape) {
+    padding: 90px 0 120px;
+  }
+}
+
+.hero-portraits__wrapper {
+  display: flex;
+}
+
+
+// Pictures
+.hero-portraits__pictures {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include breakpoint($screen-md) {
+   
+  }
+
+  @include breakpoint($screen-tab-landscape) {
+   
+  }
+
+  @include breakpoint($screen-lg) {
+   
+  }
+}
+
+.hero-portraits__pictures__item {
+  position: relative;
+ 
+  &__notif {
+    position: absolute;
+  }
+}
+
+// Content
+.hero-portraits__content__description {
+  margin: 20px 0;
+
+  @include breakpoint($screen-md) {
+    margin: 4% 0;
+  }
+}

@@ -1,0 +1,48 @@
+
+.infos-confirm.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.infos-tagether, .infos-client {
+
+  margin-top: 20px;
+
+  li {
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: auto;
+    }
+  }
+}
+
+.infos-client {
+  margin-top: 40px;
+  padding: 25px 40px;
+  border: solid 1px #e4e4e4;
+}
+
+.infos__label {
+  color: #c0c2ce;
+}
+
+.infos__value {}
+
+.infos-client__back a {
+  color: $mango;
+}
+
+.infos-form button {
+  height: 45px;
+  margin-top: 25px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  width: auto;
+  padding: 12px 30px;
+}
+
+.infos-form .infos__confirm-button {
+  align-self: flex-end;
+}

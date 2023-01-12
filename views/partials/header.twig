@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="site-header__container container-sm">
+    <a class="site-header__logo" href="{{site.link}}" rel="home">
+      <img src="{{Image(options.logo).src|resize(240)}}" alt="{{Image(options.logo).alt}}">
+    </a>
+    <button class="site-header__nav-trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="site-header__wrapper">
+      <nav class="site-header__nav" role="navigation">
+        <ul class="nav__wrapper">
+          {% for item in menu.get_items %}
+            <li class="nav__item {{item.classes | join(' ')}}">
+              <a class="item__link" href="{{item.link}}">{{item.title}}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

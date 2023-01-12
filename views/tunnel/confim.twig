@@ -1,0 +1,72 @@
+{% extends "base.twig" %}
+
+{% block header %}
+  {% include 'tunnel/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  <section class="infos-form">
+    <div class="infos-confirm container">
+      <div class="infos-form__content">
+        <p class="infos-form__content__step">{{page.confirm_sec1_surtitle}}</p>
+        <h3 class="infos-form__content__title">{{page.confirm_sec1_title}}</h3>
+        <p class="infos-form__content__description">{{page.confirm_sec1_description}}</p>
+      </div>
+      <ul class="infos-tagether">
+        <li class="infos-tagether__creditors">
+          <p class="infos__label">{{page.confirm_sec2_creancier_title}}</p>
+          <p class="infos__value">{{page.confirm_sec2_creancier_number}}</p>
+        </li>
+        <li class="infos-tagether__name">
+          <p class="infos__label">{{page.confirm_sec2_name_title}}</p>
+          <p class="infos__value">{{page.confirm_sec2_name}}</p>
+        </li>
+        <li class="infos-tagether__address">
+          <p class="infos__label">{{page.confirm_sec2_address_title}}</p>
+          <p class="infos__value">{{page.confirm_sec2_address}}</p>
+        </li>
+        <li class="infos-tagether__type">
+          <p class="infos__label">{{page.confirm_sec2_type_title}}</p>
+          <p class="infos__value">{{page.confirm_sec2_type}}</p>
+        </li>
+        <li class="infos-tagether__reference">
+          <p class="infos__label">{{page.confirm_sec2_ref_title}}</p>
+          <p class="infos__value">{{page.confirm_sec2_ref}}</p>
+        </li>
+        <li class="infos-tagether__date">
+          <p class="infos__label">Date</p>
+          <p class="infos__value">{{ function('current_time', 'd/m/Y') }}</p>
+        </li>
+      </ul>
+      <ul class="infos-client">
+        <li class="infos-client__iban">
+          <p class="infos__label">IBAN</p>
+          <p class="infos__value">{{ session.iban }}</p>
+        </li>
+        <li class="infos-client__owner-name">
+          <p class="infos__label">Nom du titulaire du compte</p>
+          <p class="infos__value">{{ session.post_values.contact_name|first ~ ' ' ~ session.post_values.contact_lsname }}</p>
+        </li>
+        <li class="infos-client__client-name">
+          <p class="infos__label">Nom du client final ou de la société</p>
+          <p class="infos__value">{{ session.post_values.contact_name ~ ' ' ~ session.post_values.contact_lsname }}</p>
+        </li>
+        <li class="infos-client__client-address">
+          <p class="infos__label">Adresse du client final ou de la société</p>
+          <p class="infos__value">{{ session.post_values.contact_address ~ ', ' ~ session.post_values.contact_city }}</p>
+        </li>
+        <li class="infos-client__back"><a href="{{ function('get_page_link', 553) }}">Modifier</a></li>
+      </ul>
+      <a class="infos__confirm-button" href="{{ function('get_page_link', 557) }}"><button class="cta-mango cta">Mettre en place un prélèvement</button></a>
+      <p class="infos-form__gocardless">En signant ce formulaire de mandat, vous autorisez (A) Tagether à envoyer des instructions à votre banque pour débiter votre compte, et (B) votre banque à débiter votre compte conformément aux instructions de Tagether.<br><br>
+      Vous bénéficiez d’un droit de remboursement par votre banque selon les conditions décrites dans la convention que vous avez passée avec elle. Toute demande de remboursement doit être présentée dans les 8 semaines suivant la date de débit de votre compte. Vos droits sont expliqués dans un document que vous pouvez obtenir auprès de votre banque.<br><br>
+      Votre confirmation implique que vous acceptez de recevoir une pré-notification 3 jours civils avant tout prélèvement.</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block contact_us %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

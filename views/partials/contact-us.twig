@@ -1,0 +1,22 @@
+<section class="contact-us">
+  <div class="contact-us__container container-sm">
+    <div class="contact-us__wrapper">
+      <div class="contact-us__content">
+        <p class="contact-us__title">{{options.contact_title}}</p>
+        <p class="contact-us__description">{{options.contact_description}}</p>
+        <a href="mailto:contact@tagether.fr?subject=Prise%20de%20contact">
+          <button type="button" class="contact-us__cta cta-mango cta">{{options.contact_cta}}</button>
+        </a>
+      </div>
+      <div class="contact-us__img">
+        <img src="{{Image(options.contact_img).src}}"  
+          srcset="
+          {{Image(options.contact_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+          {{Image(options.contact_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+          {{Image(options.contact_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+          {{Image(options.contact_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(options.img).alt}}">
+      </div>
+    </div>
+  </div>
+</section>

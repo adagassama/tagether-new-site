@@ -1,0 +1,62 @@
+{% extends "base.twig" %}
+
+{% block header %}
+  {% include 'tunnel/header.twig' %}
+{% endblock %}
+
+{% block content %}
+  <!-- Subscription Info section -->
+  <section class="subscription-info">
+    <div class="container container-sm">
+      <div class="subscription-info__content">
+        <div class="subscription-info__content__label label label-blue">
+          <h4>{{page.subscribe_sec1_surtitle}}</h4>
+        </div>
+        <h1 class="subscription-info__content__title">{{page.subscribe_sec1_title}}</h1>
+        <p class="subscription-info__content__description">{{page.subscribe_sec1_description}}</p>
+      </div>
+      <div class="subscription-info__shopping-cart">
+        <div class="subscription-info__shopping-cart__dropdown">
+          <h5 class="dropdown__title">{{page.subscribe_sec2_title}}</h5>
+          <div class="dropdown__premium dropdown-container collapsed">
+            <p class="dropdown__premium__title">{{page.subscribe_sec2_premium_title}}<span class="chevron"></span></p>
+            <ul class="dropdown__premium__description dropdown-list">
+            {% for list in page.get_field('subscribe_sec2_premium_plus') %}
+              <li class="premium__description__item">{{list.item}}</li>
+            {% endfor %}
+            </ul>
+          </div>
+          <div class="dropdown__preinscription dropdown-container collapsed">
+            <p class="dropdown__preinscription__title">{{page.subscribe_sec2_preinscription_title}}<span class="chevron"></span></p>
+            <ul class="dropdown__preinscription__description dropdown-list">
+            {% for list in page.get_field('subscribe_sec2_preinscription_plus') %}
+              <li class="preinscription__description__item">{{list.item}}</li>
+            {% endfor %}
+            </ul>
+          </div>
+          <div class="dropdown__sous-total">
+            <p class="dropdown__sous-total__title">{{page.subscribe_sec3_subtotal_title}}</p>
+            <p class="dropdown__sous-total__price">{{page.subscribe_sec3_subtotal_price}}</p>
+          </div>
+          <div class="dropdown__total">
+            <div class="dropdown__total__title">
+              <h5>{{page.subscribe_sec3_total_title}}</h5>
+              <p>{{page.subscribe_sec3_total_legend}}</p>
+            </div>
+            <p class="dropdown__total__price">{{page.subscribe_sec3_total_price}}</p>
+          </div>
+        </div>
+        <a href="{{ function('get_page_link', 553) }}">
+          <button class="subscription-info__shopping-cart__cta cta cta-mango">{{page.subscribe_sec3_link}}</button>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- End Subscription Info section -->
+{% endblock %}
+
+{% block contact_us %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

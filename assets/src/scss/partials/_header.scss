@@ -1,0 +1,257 @@
+// ---
+// Header
+// ---
+
+.site-header {
+  background-color: $white;
+  height: 75px;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  display: flex;
+
+  @include breakpoint(700px) {
+    height: 80px;
+    box-shadow: 0 2px 20px 0 rgba(187, 196, 211, 0.3);
+  }
+}
+
+.site-header__container.container-sm{
+  padding: 0;
+  @include breakpoint($screen-md) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  @include breakpoint($screen-tab-landscape){
+    width: 70%;
+  }
+}
+
+.site-header__logo {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-right: auto;
+  width: 150px;
+  padding-left: 25px;
+
+  @include breakpoint($screen-md) {
+    margin: 0;
+    padding: 0;
+    width: 140px;
+  }
+}
+
+.site-header__wrapper {
+  background-color: $dark;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0 40px;
+  transform: translateX(-100vw);
+  transition: transform .3s $easing;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  padding-top: 75px;
+  z-index: 1;
+
+  @include breakpoint($screen-md) {
+    position: relative;
+    background-color: $white;
+    flex-direction: row;
+    height: 80px;
+    overflow-y: visible;
+    padding: 0;
+    transform: translateX(0%);
+    width: auto;
+  }
+
+  &.site-header__wrapper--hide {
+    transform: translateX(0);
+  }
+}
+
+.site-header__nav {
+  order: 2;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint($screen-md) {
+    height: 80px;
+    margin-left: 30px;
+    width: auto;
+  }
+}
+
+.site-header__nav-trigger {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+
+  border: none;
+  background-color: transparent;
+  z-index: 5;
+
+  @include breakpoint($screen-md) {
+    display: none;
+  }
+
+  span {
+    background-color: $mango;
+    height: 2px;
+    margin: 4px 0;
+    width: 30px;
+    position: relative;
+    left: 0;
+    transition: .15s ease-out;
+  }
+
+  &.open span {
+    background-color: $white;
+
+    &:first-child {
+      transform: rotate(45deg);
+      transform-origin: 11% 130%;
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+      transform-origin: 40% 100%;
+    }
+  }
+}
+
+.nav__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: auto;
+
+  @include breakpoint($screen-md) {
+    align-items: center;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .nav__item {
+    height: auto;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint($screen-md) {
+      height: 100%;
+      width: auto;
+
+      &:hover {
+        .item__drop {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &:first-child {
+      margin-top: 15px;
+
+      @include breakpoint($screen-md) {
+        margin: 0;
+      }
+    }
+
+    &:last-child{
+      background: $mango;
+      margin-top: 60px;
+      transition: all ease-in 0.2s;
+      border: 1px solid transparent;
+
+      &:hover{
+        border: $mango solid 1px;
+        background: none;
+        .item__link{
+          color: $mango;
+        }
+      }
+
+      @include breakpoint($screen-md) {
+        align-items: center;
+        display: flex;
+        margin-top: 0;
+        margin-left: 30px;
+        height: 45px;
+      }
+
+      @include breakpoint($screen-tab-landscape){
+        margin-left: 70px;
+      }
+      @include breakpoint(1190px){
+        margin-left: 140px;
+      }
+
+      .item__link{
+        color: $white;
+        display: inline-block;
+        font-size: $size-cta;
+        font-weight: 500;
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint($screen-md) {
+          height: auto;
+        }
+      }
+    }
+
+    .item__link {
+      display: block;
+      padding: 12.5px 0;
+      white-space: nowrap;
+
+      @include font($barlow, 3.2rem, 300, $white, none, left);
+
+      @include breakpoint($screen-md) {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding: 0 20px;
+        width: 100%;
+
+        @include font($barlow, 1.4rem, 400, $dark-grey-blue, none, left);
+      }
+
+      &:active {
+        //background: darken($dark-blue, 3%);
+      }
+    }
+  }
+}
+
+.site-header__nav .current-menu-item{
+  @include breakpoint($screen-md) {
+    &:after{
+      content: "";
+      width: calc(100% + 20px);
+      display: block;
+      height: 1px;
+      background-color: $dark-grey-blue;
+      position: absolute;
+      bottom: 0;
+      left: -10px;
+    }
+  }
+}

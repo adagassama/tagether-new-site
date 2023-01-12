@@ -1,0 +1,69 @@
+<div id="slideScroll__wrapper">
+  <div id="slideScroll">
+    <div class="slideScroll__slides swiper-wrapper sizeWrapper">
+      <div class="slideScroll__slide {{ isMobile ? '' : 'desktop' }} active">
+        <img src="{{Image(page.prices_sec3_slide1_img).src}}"  
+        srcset="
+        {{Image(page.prices_sec3_slide1_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+        {{Image(page.prices_sec3_slide1_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+        {{Image(page.prices_sec3_slide1_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+        {{Image(page.prices_sec3_slide1_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}"
+        alt="{{Image(page.prices_sec3_slide1_img).alt}}">
+      </div>
+      <div class="slideScroll__slide {{ isMobile ? '' : 'desktop' }}">
+        <img src="{{Image(page.prices_sec3_slide2_img).src}}"  
+        srcset="
+        {{Image(page.prices_sec3_slide2_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+        {{Image(page.prices_sec3_slide2_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+        {{Image(page.prices_sec3_slide2_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+        {{Image(page.prices_sec3_slide2_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}"
+        alt="{{Image(page.prices_sec3_slide2_img).alt}}">
+      </div>
+      <div class="slideScroll__slide {{ isMobile ? '' : 'desktop' }}">
+        <img src="{{Image(page.prices_sec3_slide3_img).src}}"  
+        srcset="
+        {{Image(page.prices_sec3_slide3_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+        {{Image(page.prices_sec3_slide3_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+        {{Image(page.prices_sec3_slide3_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+        {{Image(page.prices_sec3_slide3_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}"
+        alt="{{Image(page.prices_sec3_slide3_img).alt}}">
+      </div>
+      <div class="slideScroll__slide {{ isMobile ? '' : 'desktop' }} left">
+        <img src="{{Image(page.prices_sec3_slide4_img).src}}"  
+        srcset="
+        {{Image(page.prices_sec3_slide4_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+        {{Image(page.prices_sec3_slide4_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+        {{Image(page.prices_sec3_slide4_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+        {{Image(page.prices_sec3_slide4_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}"
+        alt="{{Image(page.prices_sec3_slide4_img).alt}}">
+      </div>
+      <div class="slideScroll__slide {{ isMobile ? '' : 'desktop' }} left">
+        <img src="{{Image(page.prices_sec3_slide5_img).src}}"  
+        srcset="
+        {{Image(page.prices_sec3_slide5_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+        {{Image(page.prices_sec3_slide5_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+        {{Image(page.prices_sec3_slide5_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+        {{Image(page.prices_sec3_slide5_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}"
+        alt="{{Image(page.prices_sec3_slide5_img).alt}}">
+      </div>
+    </div>
+    <div class="slideScroll__captions">
+      <div class="slideScroll__caption active {{ isMobile ? 'mobile' }}">
+        <span class="slideScroll__title">{{page.prices_sec3_slide1_title}}</span>{{page.prices_sec3_slide1_description}}
+      </div>
+      <div class="slideScroll__caption {{ isMobile ? 'mobile' }}">
+        <span class="slideScroll__title">{{page.prices_sec3_slide2_title}}</span>{{page.prices_sec3_slide2_description}}
+      </div>
+      <div class="slideScroll__caption {{ isMobile ? 'mobile' }}">
+        <span class="slideScroll__title">{{page.prices_sec3_slide3_title}}</span>{{page.prices_sec3_slide3_description}}
+      </div>
+      <div class="slideScroll__caption {{ isMobile ? 'mobile' }}">
+        <span class="slideScroll__title">{{page.prices_sec3_slide4_title}}</span>{{page.prices_sec3_slide4_description}}
+      </div>
+      <div class="slideScroll__caption {{ isMobile ? 'mobile' }}">
+        <span class="slideScroll__title">{{page.prices_sec3_slide5_title}}</span>{{page.prices_sec3_slide5_description}}
+      </div>
+    </div>
+    <div class="slideScroll__scrollbar"></div>
+  </div>
+</div>

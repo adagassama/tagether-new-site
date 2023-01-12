@@ -1,0 +1,198 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<!-- About hero section -->
+<section class="about-hero hero-portraits">
+  <div class="about-hero__container hero-portraits__container container">
+    <div class="about-hero__wrapper hero-portraits__wrapper">
+      <div class="about-hero__pictures hero-portraits__pictures">
+        <div class="about-hero__pictures__item hero-portraits__pictures__item about-hero__pictures__item--left">
+          <img src="{{Image(page.about_sec1_portrait1_img).src}}"  
+          srcset="
+          {{Image(page.about_sec1_portrait1_img)|fit(image_size.retina.card.width, image_size.retina.card.height)}} {{image_size.retina.width}},
+          {{Image(page.about_sec1_portrait1_img)|fit(image_size.large.card.width, image_size.large.card.height)}} {{image_size.large.width}},
+          {{Image(page.about_sec1_portrait1_img)|fit(image_size.medium.card.width, image_size.medium.card.height)}} {{image_size.medium.width}},
+          {{Image(page.about_sec1_portrait1_img)|fit(image_size.mobile.card.width, image_size.mobile.card.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(page.about_sec1_portrait1_img).alt}}">
+          <svg class="about-hero__pictures__item__notif hero-portraits__pictures__item__notif" width="102px" height="29px" viewbox="0 0 102 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+            <title>Fill-1-path</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="UI/01_Desktop_Home" transform="translate(-1117.000000, -631.000000)" fill="#FF9130" fill-rule="nonzero">
+                <g id="hero">
+                  <g id="peeps" transform="translate(782.000000, 179.000000)">
+                    <path d="M431.297358,465.729803 C417.960437,475.380412 402.182529,480.48164 385.669409,480.48164 C369.156678,480.48164 353.378773,475.380412 340.04224,465.730192 L335,462.0819 L342.298839,452.000389 L347.340688,455.649069 C358.540436,463.753013 371.7945,468.036771 385.669409,468.036771 C399.54471,468.036771 412.798774,463.753013 423.998907,455.64868 L429.040759,452 L436.339596,462.081511 L431.297358,465.729803 Z" id="Fill-1-path"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <div class="about-hero__pictures__item__content">
+            <span class="about-hero__pictures__item__content__name">{{page.about_sec1_portrait1_name}}</span>
+            <p class="about-hero__pictures__item__content__job">{{page.about_sec1_portrait1_job}}</p>
+          </div>
+        </div>
+        <div class="about-hero__pictures__item hero-portraits__pictures__item about-hero__pictures__item--right">
+          <img src="{{Image(page.about_sec1_portrait2_img).src}}"  
+          srcset="
+          {{Image(page.about_sec1_portrait2_img)|fit(image_size.retina.card.width, image_size.retina.card.height)}} {{image_size.retina.width}},
+          {{Image(page.about_sec1_portrait2_img)|fit(image_size.large.card.width, image_size.large.card.height)}} {{image_size.large.width}},
+          {{Image(page.about_sec1_portrait2_img)|fit(image_size.medium.card.width, image_size.medium.card.height)}} {{image_size.medium.width}},
+          {{Image(page.about_sec1_portrait2_img)|fit(image_size.mobile.card.width, image_size.mobile.card.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(page.about_sec1_portrait2_img).alt}}">
+          <div class="about-hero__pictures__item__content">
+            <span class="about-hero__pictures__item__content__name">{{page.about_sec1_portrait2_name}}</span>
+            <p class="about-hero__pictures__item__content__job">{{page.about_sec1_portrait2_job}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-hero__content hero-portraits__content">
+        <h1 class="about-hero__content__title hero-portraits__content__title">{{page.about_sec1_title}}</h1>
+        <p class="about-hero__content__description hero-portraits__content__description">{{page.about_sec1_description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End About hero section -->
+
+<!-- Our history section -->
+<section class="history">
+  <div class="history__container">
+    <div class="history__wrapper">
+      <div class="history__content container-xs">
+        <div class="history__content__label label label-blue">
+          <h4>{{page.about_sec2_surtitle}}</h4>
+        </div>
+        <h3 class="history__content__title">{{page.about_sec2_title}}</h3>
+        <div class="history__content__description">{{page.about_sec2_description}}</div>
+      </div>
+      <div class="history__additionnal-picture">
+        <div class="history__additionnal-picture__wrap">
+          <img src="{{Image(page.about_sec2_img).src}}"  
+          srcset="
+          {{Image(page.about_sec2_img)|fit(image_size.retina.card.width, image_size.retina.card.height)}} {{image_size.retina.width}},
+          {{Image(page.about_sec2_img)|fit(image_size.large.card.width, image_size.large.card.height)}} {{image_size.large.width}},
+          {{Image(page.about_sec2_img)|fit(image_size.medium.card.width, image_size.medium.card.height)}} {{image_size.medium.width}},
+          {{Image(page.about_sec2_img)|fit(image_size.mobile.card.width, image_size.mobile.card.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(page.about_sec2_img).alt}}">
+        </div>
+      </div>
+      <div class="history__testimony">
+        <span class="history__testimony__quote-mark">
+          <svg viewbox="0 0 92 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+            <title>noun_Quotation Marks_373411</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="noun_Quotation-Marks_373411" transform="translate(46.000000, 31.000000) scale(1, -1) translate(-46.000000, -31.000000) " fill="#FFFFFF" fill-rule="nonzero">
+                <g id="Group">
+                  <g id="a-link">
+                    <g id="a">
+                      <path d="M41.75,28.1 C41.372526,27.7296875 40.9058594,27.5463542 40.35,27.55 L23.3,27.55 L23.3,2.4 C23.3035156,1.84401042 23.1035156,1.36067708 22.7,0.95 C22.322526,0.5796875 21.8558594,0.396354167 21.3,0.4 L8.4,0.4 C7.93242187,0.404036458 7.51575521,0.554036458 7.15,0.85 C6.78619792,1.13424479 6.55286458,1.50091146 6.45,1.95 L0.35,29.1 C0.343229167,29.1295573 0.3265625,29.1628906 0.3,29.2 C0.282682292,29.3846354 0.282682292,29.5679687 0.3,29.75 L0.3,59.7 C0.296354167,60.2558594 0.4796875,60.722526 0.85,61.1 C1.26067708,61.5035156 1.74401042,61.7035156 2.3,61.7 L40.35,61.7 C40.9058594,61.7035156 41.372526,61.5035156 41.75,61.1 C42.1535156,60.722526 42.3535156,60.2558594 42.35,59.7 L42.35,29.55 C42.3535156,28.9940104 42.1535156,28.5106771 41.75,28.1 Z M91.1,28.1 C90.722526,27.7296875 90.2558594,27.5463542 89.7,27.55 L72.65,27.55 L72.65,2.4 C72.6535156,1.84401042 72.4535156,1.36067708 72.05,0.95 C71.672526,0.5796875 71.2058594,0.396354167 70.65,0.4 L57.75,0.4 C57.2826823,0.395833333 56.8660156,0.529166667 56.5,0.8 C56.1360677,1.11106771 55.9027344,1.49440104 55.8,1.95 L49.7,28.9 C49.678776,28.9643229 49.6621094,29.0309896 49.65,29.1 C49.6223958,29.2136719 49.6057292,29.3303385 49.6,29.45 L49.6,59.7 C49.5963542,60.2558594 49.7796875,60.722526 50.15,61.1 C50.5606771,61.5035156 51.0440104,61.7035156 51.6,61.7 L89.7,61.7 C90.2558594,61.7035156 90.722526,61.5035156 91.1,61.1 C91.5035156,60.722526 91.7035156,60.2558594 91.7,59.7 L91.7,29.55 C91.7035156,28.9940104 91.5035156,28.5106771 91.1,28.1 Z" id="Shape"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </span>
+        <p class="history__testimony__quote">{{page.about_sec2_testimony_quote}}</p>
+        <div class="history__testimony__infos">
+          <img src="{{Image(page.about_sec2_testimony_img).src}}"  
+          srcset="
+          {{Image(page.about_sec2_testimony_img)|fit(image_size.retina.very_small.width, image_size.retina.very_small.height)}} {{image_size.retina.width}},
+          {{Image(page.about_sec2_testimony_img)|fit(image_size.large.very_small.width, image_size.large.very_small.height)}} {{image_size.large.width}},
+          {{Image(page.about_sec2_testimony_img)|fit(image_size.medium.very_small.width, image_size.medium.very_small.height)}} {{image_size.medium.width}},
+          {{Image(page.about_sec2_testimony_img)|fit(image_size.mobile.very_small.width, image_size.mobile.very_small.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(page.about_sec2_testimony_img).alt}}">
+          <p class="history__testimony__infos__name">
+            {{page.about_sec2_testimony_name}}
+            <span class="history__testimony__infos__job">{{page.about_sec2_testimony_job}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Our history section -->
+
+<!-- Values section -->
+<section class="values">
+  <div class="values__container container">
+    <div class="values__content container-xs">
+      <div class="values__content__label label label-blue">
+        <h4>{{page.about_sec3_surtitle}}</h4>
+      </div>
+      <h3 class="values__content__title">{{page.about_sec3_title}}</h3>
+    </div>
+    <div class="values__text-slider">
+      {% include 'partials/textSlider.twig' %}
+    </div>
+  </div>
+</section>
+<!-- End values section -->
+
+<!-- Differences section -->
+<section class="about-differences">
+  <div class="about-differences__container">
+    {% if page.about_sec4_video %}
+    <div class="about-video">
+      {{page.get_field('about_sec4_video')}}
+    </div>
+    <div class="about-dual-cards dual-cards video--on container">
+    {% else %}
+    <div class="about-dual-cards dual-cards container">
+    {% endif %}
+      <div class="about-dual-cards__content dual-cards__content container-xs">
+        <div class="about-dual-cards__content__label dual-cards__content__label label label-blue">
+          <h4>{{page.about_sec5_surtitle}}</h4>
+        </div>
+        <h3 class="about-dual-cards__content__title dual-cards__content__title">{{page.about_sec5_title}}</h3>
+      </div>
+      <div class="about-dual-cards__wrapper dual-cards__wrapper container-xs">
+        <div class="about-dual-cards__item dual-cards__item">
+          <div class="about-dual-cards__item__img dual-cards__item__img">
+            <img src="{{Image(page.about_sec5_business_img).src}}"  
+          srcset="
+          {{Image(page.about_sec5_business_img)|fit(image_size.retina.very_small.width, image_size.retina.very_small.height)}} {{image_size.retina.width}},
+          {{Image(page.about_sec5_business_img)|fit(image_size.large.very_small.width, image_size.large.very_small.height)}} {{image_size.large.width}},
+          {{Image(page.about_sec5_business_img)|fit(image_size.medium.very_small.width, image_size.medium.very_small.height)}} {{image_size.medium.width}},
+          {{Image(page.about_sec5_business_img)|fit(image_size.mobile.very_small.width, image_size.mobile.very_small.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(page.about_sec5_business_img).alt}}">
+          </div>
+          <span class="about-dual-cards__item__title dual-cards__item__title">{{page.about_sec5_business_title}}</span>
+          <ul class="about-dual-cards__item__description dual-cards__item__description">
+            {% for item in page.get_field('about_sec5_business_list') %}
+              <li>{{item.difference}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="about-dual-cards__item dual-cards__item">
+          <div class="about-dual-cards__item__img dual-cards__item__img">
+            <img src="{{Image(page.about_sec5_user_img).src}}"  
+          srcset="
+          {{Image(page.about_sec5_user_img)|fit(image_size.retina.very_small.width, image_size.retina.very_small.height)}} {{image_size.retina.width}},
+          {{Image(page.about_sec5_user_img)|fit(image_size.large.very_small.width, image_size.large.very_small.height)}} {{image_size.large.width}},
+          {{Image(page.about_sec5_user_img)|fit(image_size.medium.very_small.width, image_size.medium.very_small.height)}} {{image_size.medium.width}},
+          {{Image(page.about_sec5_user_img)|fit(image_size.mobile.very_small.width, image_size.mobile.very_small.height)}} {{image_size.mobile.width}}"
+          alt="{{Image(page.about_sec5_user_img).alt}}">
+          </div>
+          <span class="about-dual-cards__item__title dual-cards__item__title">{{page.about_sec5_user_title}}</span>
+          <ul class="about-dual-cards__item__description dual-cards__item__description">
+              {% for item in page.get_field('about_sec5_user_list') %}
+                <li>{{item.difference}}</li>
+              {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Video section -->
+
+  
+{% endblock %}

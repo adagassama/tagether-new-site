@@ -1,0 +1,211 @@
+{% extends "base.twig" %}
+{% block content %}
+    <!-- Front hero section -->
+    <section class="front-hero hero-portraits">
+        <div class="hero__container hero-portraits__container container">
+            <div class="hero__wrapper hero-portraits__wrapper">
+                <div class="hero__picture">
+                    <div class="hero__picture__img">
+                        <img src="{{Image(page.front_sec1_img).src}}" alt="{{Image(page.front_sec1_img).alt}}">
+                    </div>
+                </div>
+                <div class="hero__content hero-portraits__content">
+                    <h1 class="hero__content__title hero-portraits__content__title">{{page.front_sec1_title}}</h1>
+                    <div class="hero__content__description hero-portraits__content__description">
+                        {{page.front_sec1_description}}</div>
+                    <div></div>
+                    <div class="hero__content__stores">
+                        <a href="{{ page.front_sec1_appstore_url_appstore }}">
+                            <img src="{{ Image(page.front_sec1_appstore_logo_appstore).src }} " alt="">
+                        </a>
+                        <a href="{{ page.front_sec1_playstore_url_playstore }}">
+                            <img src="{{ Image(page.front_sec1_playstore_logo_playstore).src }} " alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End front hero section -->
+
+    <!-- Features section -->
+    <section class="front-business">
+        <div class="front-business__container container">
+            <div class="feat feat-1">
+                <div class="feat-img">
+                    <img src="{{ Image(page.front_sec2_feat1_img).src }} " alt="">
+                </div>
+                <p class="feat__content__title">
+                    {{page.front_sec2_feat1_texte}}
+                </p>
+            </div>
+            <div class="feat feat-2">
+                <div class="feat-img">
+                    <img src="{{ Image(page.front_sec2_feat2_img).src }} " alt="">
+                </div>
+                <p class="feat__content__title">
+                    {{page.front_sec2_feat2_texte}}
+                </p>
+            </div>
+            <div class="feat feat-3">
+                <div class="feat-img">
+                    <img src="{{ Image(page.front_sec2_feat3_img).src }} " alt="">
+                </div>
+                <p class="feat__content__title">
+                    {{page.front_sec2_feat3_texte}}
+                </p>
+            </div>
+            <div class="feat feat-4">
+                <div class="feat-img">
+                    <img src="{{ Image(page.front_sec2_feat4_img).src }} " alt="">
+                </div>
+                <p class="feat__content__title">
+                    {{page.front_sec2_feat4_texte}}
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- End Business section -->
+
+    <!-- Video section -->
+    <section class="video container">
+        <div class="">
+            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="450" src="https://www.youtube.com/embed/{{page.video}}" width="800"></iframe>
+        </div>
+    </section>
+    <!-- End Video section -->
+
+    <!-- Mozaique section -->
+    <section class="mozaique">
+        <div class="mozaique__title">
+            <p>{{page.front_sec5_title}}</p>
+        </div>
+        <div class="mozaique__img">
+            <img src="{{ Image(page.front_sec5_fond).src }} " alt="">
+        </div>
+    </section>
+    <!-- End Mozaique section -->
+
+    <!-- Press section -->
+    <section class="press">
+        <div class="press__section container">
+            <div class="press__title">
+                <div class="press__title__label label label-blue">
+                    <h4>{{page.front_sec6_surtitle}}</h4>
+                </div>
+                <h3>{{page.front_sec6_title}}</h3>
+            </div>
+            <div class="press_slider">
+                {% for item in page.get_field('front_sec6_slider') %}
+                    <div class="press__slide">
+                        <div class="press__slide__img">
+                            <div class="img">
+                                <img src="{{Image(item.logo.sizes.medium).src}}" alt="{{Image(item.logo).alt}}">
+                            </div>
+
+                        </div>
+                        <p>{{item.testimony}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Press section -->
+
+<!-- TI section -->
+<section class="contact-us">
+    <div class="contact-us__container container-sm">
+        <div class="contact-us__wrapper">
+            <div class="contact-us__content">
+                <p class="contact-us__title">{{options.contact_title}}</p>
+            </div>
+            <div class="contact-us__img">
+                <img src="{{Image(options.contact_img).src}}" srcset="
+                                                                                                                                  {{Image(options.contact_img)|fit(image_size.retina.card_big.width, image_size.retina.card_big.height)}} {{image_size.retina.width}},
+                                                                                                                                  {{Image(options.contact_img)|fit(image_size.large.card_big.width, image_size.large.card_big.height)}} {{image_size.large.width}},
+                                                                                                                                  {{Image(options.contact_img)|fit(image_size.medium.card_big.width, image_size.medium.card_big.height)}} {{image_size.medium.width}},
+                                                                                                                                  {{Image(options.contact_img)|fit(image_size.mobile.card_big.width, image_size.mobile.card_big.height)}} {{image_size.mobile.width}}" alt="{{Image(options.img).alt}}">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End TI section -->
+<!-- Blog section -->
+<section class="front-blog">
+    <div class="front-blog__container container-sm">
+        <div class="front-blog__content">
+            <div class="front-blog__content__label label label-blue">
+                <h4>{{page.front_sec7_surtitle}}</h4>
+            </div>
+            <h3 class="front-blog__content__title">{{page.front_sec7_title}}</h3>
+        </div>
+        <div class="front-blog__wrapper">
+            {% for post in posts %}
+            <a href="{{ post.link }}" class="front-blog__card blog-card">
+                <img src="{{Image(post.thumbnail).src}}"
+                    srcset="
+                        {{Image(post.thumbnail)|fit(image_size.retina.card.width, image_size.retina.card.height)}} {{image_size.retina.width}},
+                        {{Image(post.thumbnail)|fit(image_size.large.card.width, image_size.large.card.height)}} {{image_size.large.width}},
+                        {{Image(post.thumbnail)|fit(image_size.medium.card.width, image_size.medium.card.height)}} {{image_size.medium.width}},
+                        {{Image(post.thumbnail)|fit(image_size.mobile.card.width, image_size.mobile.card.height)}} {{image_size.mobile.width}}"
+                    alt="{{Image(post.thumbnail).alt}}" class="front-blog__card__img blog-card__img">
+                <h5 class="front-blog__card__title blog-card__title">{{ post.title }}</h5>
+                <p class="front-blog__card__excerpt blog-card__excerpt">{{post.post_excerpt}}</p>
+                <span class="front-blog__card__date blog-card__date">{{post.post_date|date("d F Y")}}</span>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="front-blog__link blog__see-more">
+            <a href="{{site.link}}/blog">
+                En voir plus
+                <svg height="512px" id="Capa_1" style="enable-background:new 0 0 31.49 31.49;" version="1.1"
+                    viewbox="0 0 31.49 31.49" width="512px" x="0px" xml:space="preserve"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+                    <path
+                        d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"
+                        fill="#FFFFFF" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- End Blog section -->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.press_slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true
+                    }
+                }, {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding: settings: "unslick" instead of a settings object
+            ]
+        });
+    });
+</script>{% endblock %}

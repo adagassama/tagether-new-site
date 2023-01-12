@@ -1,0 +1,120 @@
+// Used in Front page and About page //
+.dual-cards__content{
+  margin-bottom: 50px;
+}
+
+.dual-cards__wrapper{
+  @include breakpoint($screen-md) {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+  }
+
+  @include breakpoint($screen-tab-landscape){
+    margin-left: calc(100%/12 * 2);
+  }
+}
+
+.dual-cards__content__title{
+  line-height: 32px;
+  margin-top: 25px;
+}
+
+.dual-cards__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  margin-bottom: 50px;
+
+  @include breakpoint($screen-md){
+    align-items: start;
+    width: 50%;
+    padding: 15px 35px;
+  }
+
+  &:first-child {
+    .dual-cards__item__img{
+      &:before {
+        background-color: $mango;
+        width: 32px;
+        height: 22px;
+        top: -11px;
+        left: -15px;
+      }
+    }
+  }
+
+  &:last-child{
+    .dual-cards__item__img {
+      &:before {
+        background-color: $dark;
+        width: 28px;
+        height: 28px;
+        top: -14px;
+        left: -14px;
+      }
+    }
+  }
+}
+
+
+.dual-cards__item__img {
+  width: 75px;
+  height: 75px;
+  position: relative;
+
+  @include breakpoint($screen-md){
+    width: 100px;
+    height: 100px;
+  }
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+
+  img {
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+
+    @include breakpoint($screen-md) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.dual-cards__item__title{
+  margin: 30px 0 15px;
+  font-weight: 500;
+}
+
+.dual-cards__item__description{
+  text-align: center;
+  // color: rgba(39, 64, 92, 0.7);
+
+  overflow: hidden;
+  list-style-type: square;
+  padding-left: 20px;
+  font-size: 16px;
+  color: $dark-grey-blue;
+  opacity: .7;
+  text-align: left;
+
+  > li {
+
+    margin-bottom: 25px;
+    
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+
+  // @include breakpoint ($screen-md){
+  //   text-align: left;
+  // }
+}

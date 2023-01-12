@@ -1,0 +1,278 @@
+{% extends "base.twig" %}
+{% block content %}
+	<!-- Front hero section -->
+	<section class="front-hero hero-portraits">
+		<div class="hero__container hero-portraits__container container">
+			<div class="hero__wrapper hero-portraits__wrapper">
+				<div class="hero__picture">
+					<div class="hero__picture__img">
+						<img src="{{Image(page.independant_sec1_img).src}}" alt="{{Image(page.independant_sec1_img).alt}}">
+					</div>
+				</div>
+				<div class="hero__content hero-portraits__content">
+					<h1 class="hero__content__title hero-portraits__content__title">{{page.independant_sec1_title}}</h1>
+					<div class="hero__content__description hero-portraits__content__description">
+						{{page.independant_sec1_description}}</div>
+					
+					<div class="hero__content__stores">
+						<button class="btn-hero">
+							<a href="{{ page.independant_sec1_cta_url }}">
+								{{ page.independant_sec1_cta }}
+							</a>
+						</button>
+
+						<button class="btn-hero">
+							<a href="{{ page.independant_sec1_cta_url_demo }}">
+								{{ page.independant_sec1_cta_demo }}
+							</a>
+						</button>
+
+						<a href="{{ page.front_sec1_appstore_url_appstore }}">
+							<img src="{{ Image(page.front_sec1_appstore_logo_appstore).src }} " alt="">
+						</a>
+						<a href="{{ page.front_sec1_playstore_url_playstore }}">
+							<img src="{{ Image(page.front_sec1_playstore_logo_playstore).src }} " alt="">
+						</a>
+					</div>
+                    <div class="press_slider">
+							{% for item in page.get_field('independant_sec1_slider') %}
+								<div class="press__slide">
+									
+										<div class="img">
+								            <img src="{{Image(item.logo.sizes.medium).src}}" alt="{{Image(item.logo).alt}}">
+							            </div>
+
+									
+									
+								</div>
+							{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End front hero section -->
+
+	<!-- Features section 2 -->
+	<section class="front-business hero-portraits">
+        <div class="front-business__container container">
+			<div class="feats">
+				<h3>{{page.independant_sec2_titre}}</h3>
+			</div>
+		</div>
+        <div class="front-business__container container">
+			<div class="feat feat-1-1">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec2_feat1_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec2_feat1_titre}}
+				</p>
+			</div>
+			<div class="feat feat-2">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec2_feat2_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec2_feat3_titre}}
+				</p>
+			</div>
+			<div class="feat feat-3">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec2_feat3_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec2_feat1_titre}}
+				</p>
+			</div>
+			<div class="feat feat-4">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec2_feat4_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec2_feat4_titre}}
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- End Features section 2 -->
+
+
+    <!-- Section 3 Ventes -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="">
+				<h3>{{page.independant_sec3_grand_titre}}</h3>
+			</div>
+		</div>
+		<div class="front-business__container container">
+
+			<div class="feat feat-ventes">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec3_feat1_img).src }} " alt="">
+				</div>
+				<p class="">
+					{{page.independant_sec3_feat1_titre}}
+				</p>
+                <p class="feat__content__title">
+					{{page.independant_sec3_feat1_desc}}
+				</p>
+			</div>
+
+
+			<div class="feat feat-ventes">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec3_feat2_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec3_feat2_titre}}
+				</p>
+                <p class="">
+					{{page.independant_sec3_feat2_desc}}
+				</p>
+			</div>
+			<div class="feat feat-ventes">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec3_feat3_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec3_feat3_titre}}
+				</p>
+                <p class="">
+					{{page.independant_sec3_feat3_desc}}
+				</p>
+			</div>
+			<div class="feat feat-ventes">
+				<div class="feat-img">
+					<img src="{{ Image(page.independant_sec3_feat4_img).src }} " alt="">
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec3_feat4_titre}}
+				</p>
+                <p class="">
+					{{page.independant_sec3_feat4_desc}}
+				</p>
+			</div>
+		</div>
+
+	</section>
+	<!-- End Section 3 Ventes -->
+
+	<!-- Section 4 Procédure -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="feat">
+				<h3>{{page.independant_sec4_titre}}</h3>
+			</div>
+		</div>
+		<div class="front-business__container container">
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.independant_sec4_feat1_grand_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec4_feat1_titre}}
+				</p>
+                <p class="">
+					{{page.independant_sec4_feat1_desc}}
+				</p>
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.independant_sec4_feat2_grand_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec4_feat2_titre}}
+				</p>
+                <p class="">
+					{{page.independant_sec4_feat2_desc}}
+				</p>
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.independant_sec4_feat3_grand_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec4_feat3_titre}}
+				</p>
+                <p class="">
+					{{page.independant_sec4_feat3_desc}}
+				</p>
+			</div>
+		</div>
+		<div class="btn-inscription">
+			<button class="btn-feat">
+					<a href="{{ page.independant_sec4_lien_cta_bouton_inscription }}">
+								{{ page.independant_sec4_bouton_inscription_cta }}
+					</a>
+				</button>
+		</div>
+	</section>
+	<!-- End Section 4 Procédure -->
+
+    <!-- Section 5 Photographie -->
+	<section class="front-feature-2 hero-portraits">
+		<div class="front-business__container container">
+			<div class="">
+				<h3>{{page.independant_sec5_grand_titre}}</h3>
+			</div>
+		</div>
+
+		<div class="front-business__container container">
+			<div class="feat-img-poste">
+					<img src="{{ Image(page.independant_sec5_image).src }} " alt="">
+			</div>
+			<div class="feat">
+				<div class="feat-img">
+					<h1> {{page.independant_sec5_titre}} </h1>
+				</div>
+				<p class="feat__content__title">
+					{{page.independant_sec5_description }}
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- End Section 5 Photographie -->
+
+
+	<!-- Section 6 Contact -->
+	
+
+	<!-- End Section 6 Contact -->
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+$('.press_slider').slick({
+slidesToShow: 4,
+slidesToScroll: 1,
+arrows: false,
+dots: false,
+autoplay: true,
+autoplaySpeed: 2000,
+responsive: [
+{
+breakpoint: 1024,
+settings: {
+slidesToShow: 4,
+slidesToScroll: 4,
+infinite: true
+}
+}, {
+breakpoint: 600,
+settings: {
+slidesToShow: 2,
+slidesToScroll: 2
+}
+}, {
+breakpoint: 480,
+settings: {
+slidesToShow: 1,
+slidesToScroll: 1
+}
+}
+// You can unslick at a given breakpoint now by adding: settings: "unslick" instead of a settings object
+]
+});
+});
+</script>{% endblock %}

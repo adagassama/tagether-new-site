@@ -1,0 +1,229 @@
+.mainSlider__wrapper {}
+
+.mainSlider {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint ($screen-md) {
+    flex-direction: row;
+  }
+}
+
+.phoneSlider__wrapper {
+  padding: 50px 25px;
+  position: relative;
+  align-self: center;
+
+  @include breakpoint ($screen-md) {
+    padding: 50px 0;
+  }
+}
+
+.phoneSlider {
+
+  $phone_width : 230px;
+
+  overflow: hidden;
+  margin: 0 auto;
+  width: $phone_width;
+  padding-bottom: calc(675/433 * 100%);
+  border-radius: $phone_width * 85/433;
+  border: $phone_width * 30/433 solid;
+  border-image: url(../img/iphone.png) fill calc(113/919*100%) calc(30/433*100%) calc(131/911*100%) calc(30/433*100%) stretch;
+  border-top-width: $phone_width * 113/433;
+  border-bottom-width: $phone_width * 131/433;
+  box-shadow: -15px 41px 419px 0 rgba(0, 0, 0, 0.1), inset 0 1px 7px 0 rgba(255, 255, 255, 0.19);
+
+  position: relative;
+
+  @include breakpoint(375px) {
+    $phone_width : 290px;
+
+    width: $phone_width;
+    border-radius: $phone_width * 85/433;
+    border: $phone_width * 30/433 solid;
+    border-image: url(../img/iphone.png) fill calc(113/919*100%) calc(30/433*100%) calc(131/919*100%) calc(30/433*100%) stretch;
+    border-top-width: $phone_width * 113/433;
+    border-bottom-width: $phone_width * 131/433;
+  }
+
+  @include breakpoint ($screen-md) {
+    margin: 0;
+  }
+}
+
+.phoneSlider__slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.phoneSlider__slide {
+  flex-shrink: 0;
+}
+
+.phoneSlider__slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.phoneSlider__captionsWrapper {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 25px * 2);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+
+  @include breakpoint ($screen-md) {
+    bottom: auto;
+    left: -300px;
+    top: 130px;
+    width: 350px;
+  }
+}
+
+.mainSlider__numbers {
+  width: 50px;
+  height: 50px;
+  color: $white;
+  background: $dark-grey-blue;
+  position: absolute;
+  z-index: 2;
+  transform: translate(0, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint ($screen-md) {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.phoneSlider__captions {
+  position: relative;
+  padding: 50px;
+  background: $white;
+  box-shadow: -5px 6px 40px 0 rgba(0, 0, 0, 0.06);
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.phoneSlider__caption{
+  position: absolute;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    position: static;
+    float: left;
+  }
+}
+
+.phoneSlider__caption__title{
+  font-size: 20px;
+  padding-bottom: 15px;
+  line-height: normal;
+}
+
+.phoneSlider__caption__description{
+  font-size: 16px;
+}
+
+.mainSlider__arrows {
+  display: flex;
+  align-self: flex-end;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.mainSlider__arrow {
+  width: 120px;
+  height: 70px;
+  color: $white;
+  background: $mango;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .3s ease;
+
+  &-previous {
+    margin-right: 1px;
+    transform: rotate(180deg);
+  }
+
+  &.disable {
+    opacity: .7;
+  }
+
+  svg{
+    width: 25px;
+    height: 15px;
+  }
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.tileSlider__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint ($screen-md) {
+    order: -1;
+  }
+}
+
+.mainSlider__cover {
+  display: none;
+  margin-top: auto;
+
+  @include breakpoint ($screen-md) {
+    display: block;
+    height: 360px;
+  }
+}
+
+.mainSlider__cover img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.tileSlider {
+  width: 235px;
+  height: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 50px auto;
+}
+
+.tileSlide {
+  width: 45px;
+  height: 1px;
+  opacity: 0.5;
+  background-color: rgba(39, 64, 92, 0.7);
+  transition: all .3s ease;
+
+  &:hover {
+    width: 55px;
+    height: 2px;
+    opacity: 1;
+  }
+
+  &.active {
+    background: $dark-grey-blue;
+    width: 55px;
+    height: 2px;
+    opacity: 1;
+  }
+}

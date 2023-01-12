@@ -1,0 +1,133 @@
+#slideScroll__wrapper {
+//padding-top: 50px;
+}
+
+#slideScroll {
+padding: 30px 0;
+height: calc(100vh - 80px);
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+
+  @include breakpoint($screen-md){
+    margin-top: 25px;
+    margin-left: 10vw;
+  }
+}
+
+.slideScroll__slides {
+width: 100%;
+height: 60%;
+display: flex;
+margin-top: 50px;
+}
+
+.slideScroll__slide {
+flex: 1;
+margin: 0 20px;
+// padding: 0 20px;
+line-height: 0;
+opacity: .7;
+
+  &.desktop {
+    max-width: 40%;
+  }
+
+  &.active {
+    flex: 3;
+    opacity: 1;
+  }
+
+  &.left {
+    flex: 0;
+    margin: 0;
+  }
+}
+
+.slideScroll__slide img {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+.slideScroll__captions{
+position: relative;
+
+@include breakpoint($screen-md){
+  margin-left: 20px;
+}
+}
+
+.slideScroll__caption{
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+transition: all .3s ease;
+
+  &.active {
+    opacity: 1;
+    // position: static;
+  }
+
+  &.stay-active {
+    opacity: 1;
+    // position: static;
+  }
+
+  &.mobile {
+    &.active {
+      position: static;
+    }
+    &.stay-active {
+      position: static;
+    }
+  }
+}
+
+// Mobile
+
+#slideScroll__wrapper.mobile {
+  width: 100%;
+  overflow: hidden;
+  
+  #slideScroll {
+    height: auto;
+    
+    margin: 0 25px;
+    overflow: visible;
+
+    @include breakpoint($screen-md) {
+      margin: 0;
+      margin-top: 25px;
+    }
+  }
+
+  .slideScroll__slide {
+    width: 70%;
+    flex: none;
+    margin: 0;
+    transition: opacity .3s ease;
+    
+    &.active {
+      flex: none;
+    }
+
+    &:last-child{
+      margin-right: 30%;
+    }
+  }
+
+  .slideScroll__caption{
+    // transition: none;
+  }
+
+  .slideScroll__scrollbar {
+    height: 7px;
+    margin-top: 45px;
+    
+    .swiper-scrollbar-drag {
+      background: #f3f3f3;
+    }
+  }
+}
